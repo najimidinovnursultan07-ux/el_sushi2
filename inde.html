@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="ky" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Эл Суши - Эң Даамдуу Суши, Сеттер жана Пиццалар</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            dark: '#0f172a',
+                            gold: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Жогорку маалымат тилкеси -->
+    <div
+        class="bg-gradient-to-r from-brand-700 via-brand-600 to-amber-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-clock text-amber-300"></i>
+                <span data-i18n="work_hours">Күн сайын 10:00 - 23:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-phone text-amber-300 mr-1"></i> <span data-i18n="phone_label">Ишеним
+                        телефону</span>: <a href="tel:+996554469692" class="hover:underline">+996 554 46 96
+                        92</a></span>
+                <span class="hidden md:inline"><i class="fa-solid fa-truck-fast text-amber-300 mr-1"></i> <span
+                        data-i18n="free_delivery_banner">2500 сомдон жогору буйрутмаларга жеткирүү акысыз!</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Меню тилкеси -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden shadow-lg group-hover:border-brand-500 transition-all">
+                        <img src="https://scontent.cdninstagram.com/v/t51.82787-19/589153271_17843772132628172_7492361254102998357_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=105&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=GfEb4MoiGXsQ7kNvwEIRVYY&_nc_oc=AdqWBFdApqWn4jaMl0UVD1ZgsLgibORT8VtNJkkDYg9QOyslmgKrsfPqUJuW6xPLmEc&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=CjTmkYChaBNmN-Naxo022w&_nc_ss=7ba8c&oh=00_AQKXYWpLW-nKZL1mDj7XbWT4hkauJn_XI0jcl1Mtcc8Odw&oe=6AB687C5"
+                            alt="Эл Суши Логотип" class="w-full h-full object-cover">
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-2.5 bg-slate-800/80 hover:bg-slate-800 transition px-3.5 py-2 rounded-xl cursor-pointer border border-slate-700/60"
+                    onclick="scrollToSection('filialdar')">
+                    <i class="fa-solid fa-location-dot text-brand-500"></i>
+                    <div class="text-xs">
+                        <span class="text-slate-400 block font-medium" data-i18n="selected_branch_label">Тандалган
+                            филиал:</span>
+                        <span class="font-bold text-slate-200" id="current-branch-label">Панфиловка филиалы</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-xs ml-1"></i>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <nav class="hidden md:flex items-center gap-5 font-medium text-sm text-slate-300">
+                <a href="#menu" onclick="filterMenu('all')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_menu">Меню</a>
+                <a href="#menu" onclick="filterMenu('сеттер')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_sets">Сеттер</a>
+                <a href="#menu" onclick="filterMenu('роллдор')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_rolls">Роллдор</a>
+                <a href="#menu" onclick="filterMenu('пиццалар')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_pizza">Пиццалар</a>
+                <a href="#menu" onclick="filterMenu('комбо')"
+                    class="text-amber-400 hover:text-brand-500 transition font-bold" data-i18n="nav_combo">Комбо</a>
+                <a href="#menu" onclick="filterMenu('kfc')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_kfc">KFC & Фастфуд</a>
+                <a href="#menu" onclick="filterMenu('суусундуктар')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_drinks">Суусундуктар</a>
+                <a href="#menu" onclick="filterMenu('соустар')" class="hover:text-brand-500 transition"
+                    data-i18n="nav_sauces">Соустар</a>
+                <a href="#filialdar" class="hover:text-brand-500 transition" data-i18n="nav_branches">Филиалдар</a>
+            </nav>
+
+            <!-- Тил которгуч жана Корзина -->
+            <div class="flex items-center gap-3">
+                <!-- Тил которгуч баскычтары (RU / KG) -->
+                <div class="bg-slate-800 border border-slate-700 p-1 rounded-xl flex items-center text-xs font-bold">
+                    <button id="lang-kg" onclick="setLanguage('kg')"
+                        class="px-2.5 py-1.5 rounded-lg transition bg-brand-600 text-white shadow">KG</button>
+                    <button id="lang-ru" onclick="setLanguage('ru')"
+                        class="px-2.5 py-1.5 rounded-lg transition text-slate-400 hover:text-white">RU</button>
+                </div>
+
+                <button onclick="toggleCart()"
+                    class="relative bg-brand-600 hover:bg-brand-700 text-white px-4 py-2.5 rounded-2xl font-bold flex items-center gap-2.5 transition shadow-lg shadow-brand-600/30">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span class="hidden sm:inline" data-i18n="cart_text">Корзина</span>
+                    <span id="cart-badge"
+                        class="bg-amber-500 text-slate-950 text-xs px-2 py-0.5 rounded-full font-black">0</span>
+                </button>
+
+                <button onclick="toggleMobileMenu()"
+                    class="md:hidden p-2.5 text-slate-300 hover:text-white bg-slate-800 rounded-xl transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Мобилдик меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 space-y-3">
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('all');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_menu">Меню</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('сеттер');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_sets">Сеттер</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('роллдор');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_rolls">Роллдор</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('пиццалар');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_pizza">Пиццалар</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('комбо');"
+                class="block font-bold text-amber-400 py-1" data-i18n="nav_combo">Комбо</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('kfc');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_kfc">KFC & Фастфуд</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('суусундуктар');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_drinks">Суусундуктар</a>
+            <a href="#menu" onclick="toggleMobileMenu(); filterMenu('соустар');"
+                class="block font-medium text-slate-200 py-1" data-i18n="nav_sauces">Соустар</a>
+            <a href="#filialdar" onclick="toggleMobileMenu();" class="block font-medium text-slate-200 py-1"
+                data-i18n="nav_branches">Филиалдар</a>
+        </div>
+    </header>
+
+    <!-- Башкы бет (Hero Section) -->
+    <section class="relative bg-slate-950 text-white overflow-hidden py-16 md:py-24 border-b border-slate-800">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center md:text-left">
+                <div
+                    class="inline-flex items-center gap-2 bg-brand-600/20 border border-brand-500/30 px-4 py-1.5 rounded-full text-amber-300 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-fire text-amber-400"></i> <span data-i18n="hero_badge">Премиум сапаттагы япон
+                        жана итальян тамактары</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    <span data-i18n="hero_title_1">Даамдуу тамактар</span> <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-amber-400"
+                        data-i18n="hero_title_2">Эл Суши & Пицца менен!</span>
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-lg mx-auto md:mx-0" data-i18n="hero_desc">
+                    Эң жаңы лосось, кытырак роллдор, даамдуу пиццалар, комбо топтомдор жана суусундуктар. Онлайн
+                    буйрутма бериңиз!
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                    <a href="#menu"
+                        class="w-full sm:w-auto bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/30 transition transform hover:-translate-y-0.5 text-center">
+                        <span data-i18n="hero_btn_menu">Товарлардан тандоо</span> <i
+                            class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#filialdar"
+                        class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold px-6 py-4 rounded-2xl transition text-center"
+                        data-i18n="hero_btn_branches">
+                        Филиалдарды көрүү
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center">
+                <div
+                    class="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border border-slate-800 group">
+                    <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&h=600&fit=crop"
+                        alt="Суши Сет" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+                        <span
+                            class="bg-amber-500 text-slate-950 text-xs font-black px-3 py-1 rounded-lg w-max mb-2 shadow-md"
+                            data-i18n="hit_badge">Хит Продаж 🔥</span>
+                        <h3 class="text-xl font-extrabold text-white" data-i18n="hit_title">«Эл Супрем» Сети</h3>
+                        <p class="text-amber-300 text-sm font-semibold" data-i18n="hit_pieces">40 кесим</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меню жана Категориялар бөлүмү -->
+    <section id="menu" class="py-16 md:py-24 container mx-auto px-4">
+        <div class="text-center max-w-xl mx-auto mb-12 space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="products_heading">Товарлар</h2>
+            <p class="text-slate-400" data-i18n="products_sub">Ар бир категориядан өзүңүзгө жаккан тамакты тандап,
+                корзинага кошуңуз.</p>
+        </div>
+
+        <!-- Мобилдик версия үчүн SELECT -->
+        <div class="mb-8 md:hidden">
+            <label for="category-select" class="block text-xs font-bold text-slate-400 uppercase mb-2"
+                data-i18n="select_cat_label">Категорияны тандоо</label>
+            <div class="relative">
+                <select id="category-select" onchange="filterMenu(this.value)"
+                    class="w-full bg-slate-800 border border-slate-700 text-white font-bold px-4 py-3 rounded-2xl focus:outline-none focus:border-brand-500 appearance-none shadow-lg">
+                    <option value="all" data-i18n="cat_all">🍽️ Бардык товарлар</option>
+                    <option value="сеттер" data-i18n="cat_sets">🍣 Сеттер</option>
+                    <option value="роллдор" data-i18n="cat_rolls">🍱 Роллдор</option>
+                    <option value="пиццалар" data-i18n="cat_pizza">🍕 Пиццалар</option>
+                    <option value="комбо" data-i18n="cat_combo">🔥 Комбо топтомдор</option>
+                    <option value="kfc" data-i18n="cat_kfc">🍗 KFC & Фастфуд</option>
+                    <option value="суусундуктар" data-i18n="cat_drinks">🥤 Суусундуктар</option>
+                    <option value="соустар" data-i18n="cat_sauces">🥫 Соустар</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Кнопкалар -->
+        <div class="hidden md:flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-12" id="category-filters">
+            <button onclick="filterMenu('all')"
+                class="category-btn active-cat px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-brand-600 text-white shadow-lg shadow-brand-600/30"
+                data-i18n="cat_all">Бардыгы</button>
+            <button onclick="filterMenu('сеттер')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_sets">Сеттер</button>
+            <button onclick="filterMenu('роллдор')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_rolls">Роллдор</button>
+            <button onclick="filterMenu('пиццалар')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_pizza">Пиццалар</button>
+            <button onclick="filterMenu('комбо')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-amber-400 hover:bg-slate-700 border border-amber-500/40"
+                data-i18n="cat_combo">🔥 Комбо</button>
+            <button onclick="filterMenu('kfc')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_kfc">KFC & Фастфуд</button>
+            <button onclick="filterMenu('суусундуктар')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_drinks">Суусундуктар</button>
+            <button onclick="filterMenu('соустар')"
+                class="category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                data-i18n="cat_sauces">Соустар</button>
+        </div>
+
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- Филиалдар бөлүмү -->
+    <section id="filialdar" class="py-16 bg-slate-950 border-y border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-12 space-y-3">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="branches_heading">Филиалдар</h2>
+                <p class="text-slate-400" data-i18n="branches_sub">Борборубуздагы эң ыңгайлуу филиалдарыбыздын бирине
+                    келип даам сызыңыз.</p>
+            </div>
+
+            <div id="branches-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="footer" class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2.5">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden shadow-md">
+                        <img src="https://scontent.cdninstagram.com/v/t51.82787-19/589153271_17843772132628172_7492361254102998357_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=105&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=GfEb4MoiGXsQ7kNvwEIRVYY&_nc_oc=AdqWBFdApqWn4jaMl0UVD1ZgsLgibORT8VtNJkkDYg9QOyslmgKrsfPqUJuW6xPLmEc&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=CjTmkYChaBNmN-Naxo022w&_nc_ss=7ba8c&oh=00_AQKXYWpLW-nKZL1mDj7XbWT4hkauJn_XI0jcl1Mtcc8Odw&oe=6AB687C5"
+                            alt="Эл Суши Логотип" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400" data-i18n="footer_about">
+                    Эң сапаттуу жана таза азыктардан даярдалган япон жана итальян тамактары, комбо топтомдор жана
+                    суусундуктар.
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://wa.me/996554469692" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition"
+                        title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://t.me/elsushi_navopavlovka" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-white flex items-center justify-center text-slate-300 transition"
+                        title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/elsushi_navopavlovka" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center text-slate-300 transition"
+                        title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-4" data-i18n="footer_links_title">Ыкчам шилтемелер</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="#menu" class="hover:text-white transition" data-i18n="footer_link_1">Биздин
+                            товарлар</a></li>
+                    <li><a href="#menu" onclick="filterMenu('сеттер')" class="hover:text-white transition"
+                            data-i18n="footer_link_2">Сеттер</a></li>
+                    <li><a href="#menu" onclick="filterMenu('комбо')"
+                            class="hover:text-white transition text-amber-400 font-semibold"
+                            data-i18n="footer_link_3">Комбо топтомдор</a></li>
+                    <li><a href="#filialdar" class="hover:text-white transition" data-i18n="footer_link_4">Филиалдар</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-4" data-i18n="footer_contacts_title">Байланыш маалыматтары
+                </h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone text-brand-500 mt-1"></i>
+                        <span><a href="tel:+996554469692" class="hover:text-white transition font-bold text-white">+996
+                                554 46 96 92</a><br><span data-i18n="phone_label">Ишеним телефону</span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            <p data-i18n="footer_rights">&copy; 2026 Эл Суши Бишкек. Бардык укуктар корголгон.</p>
+        </div>
+    </footer>
+
+    <!-- Корзина Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col">
+                <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-bag-shopping text-brand-500 text-xl"></i>
+                        <h3 class="font-extrabold text-lg text-white" data-i18n="cart_title">Сиздин корзинаңыз</h3>
+                    </div>
+                    <button onclick="toggleCart()"
+                        class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container"
+                    class="flex-1 overflow-y-auto p-5 space-y-4 divide-y divide-slate-800/60"></div>
+
+                <div class="p-5 border-t border-slate-800 bg-slate-950 space-y-4">
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between text-slate-400">
+                            <span data-i18n="subtotal_label">Товарлардын баасы:</span>
+                            <span id="cart-subtotal" class="font-bold text-slate-200">0 сом</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span data-i18n="delivery_label">Жеткирүү:</span>
+                            <span id="cart-delivery-fee" class="font-bold text-emerald-400"
+                                data-i18n="free_delivery_text">Акысыз (2500 сомдон жогору)</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-black text-white pt-2 border-t border-slate-800">
+                            <span data-i18n="total_label">Жалпы сумма:</span>
+                            <span id="cart-total" class="text-brand-500">0 сом</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openCheckoutModal()" id="checkout-btn"
+                        class="w-full bg-brand-600 hover:bg-brand-700 text-white font-extrabold py-4 rounded-2xl shadow-xl shadow-brand-600/30 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        data-i18n="checkout_btn">
+                        Буйрутманы тариздөө
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm hidden">
+        <div
+            class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <h3 class="font-extrabold text-xl text-white" data-i18n="modal_title">Буйрутманы WhatsApp аркылуу
+                    жиберүү</h3>
+                <button onclick="closeCheckoutModal()"
+                    class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4">
+                <form id="order-form" onsubmit="submitOrderToWhatsApp(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_type_label">Буйрутма ыкмасы *</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label
+                                class="flex items-center gap-2 bg-slate-800 border border-slate-700 p-3 rounded-xl cursor-pointer hover:border-brand-500 transition">
+                                <input type="radio" name="order-type" value="delivery" checked
+                                    onchange="toggleOrderTypeFields()" class="text-brand-600 focus:ring-brand-500">
+                                <span class="text-sm font-bold text-white" data-i18n="type_delivery">Жеткирүү</span>
+                            </label>
+                            <label
+                                class="flex items-center gap-2 bg-slate-800 border border-slate-700 p-3 rounded-xl cursor-pointer hover:border-brand-500 transition">
+                                <input type="radio" name="order-type" value="pickup" onchange="toggleOrderTypeFields()"
+                                    class="text-brand-600 focus:ring-brand-500">
+                                <span class="text-sm font-bold text-white" data-i18n="type_pickup">Өзү алып кетүү</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_name_label">Аты-жөнүңүз *</label>
+                        <input type="text" id="order-name" required placeholder="Атай Бектенов"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_phone_label">Телефон номериңиз *</label>
+                        <input type="tel" id="order-phone" required placeholder="+996 554 46 96 92"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div id="delivery-address-group">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_address_label">Жеткирүү дареги *</label>
+                        <input type="text" id="order-address" placeholder="Көчө, үй номери, батир"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div id="pickup-branch-group" class="hidden">
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_branch_label">Алып кетүүчү филиал *</label>
+                        <select id="order-branch"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500">
+                            <option value="Панфиловка филиалы">Панфиловка филиалы (Каиндийский остановка позади)
+                            </option>
+                            <option value="Кара-Балта филиалы">Кара-Балта филиалы (улица Кожомбердиева Крылова 122/2)
+                            </option>
+                            <option value="Новопавловка филиалы">Новопавловка филиалы (улица Фрунзе 281)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_payment_label">Төлөө ыкмасы</label>
+                        <select id="order-payment"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500">
+                            <option value="cash" data-i18n="pay_cash">Накталай акча (курьерге / кассага)</option>
+                            <option value="card" data-i18n="pay_card">Банктык карта (МБанк / ЭЛКАРТ)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                            data-i18n="form_comment_label">Кошумча каалоолор</label>
+                        <textarea id="order-comment" rows="2" placeholder="Кошумча таякчалар керек"
+                            class="w-full bg-slate-800 border border-slate-700 px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 rounded-2xl shadow-xl shadow-emerald-600/30 transition mt-2 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span data-i18n="whatsapp_send_btn">WhatsApp
+                            аркылуу жиберүү</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 z-50 bg-slate-800 border border-slate-700 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message" class="text-sm font-semibold">Ийгиликтүү аткарылды!</span>
+    </div>
+
+    <!-- JavaScript коду -->
+    <script>
+        const WHATSAPP_NUMBER = "996554469692";
+        let currentLang = 'kg'; // Баштапкы тил - Кыргызча
+
+        // Котормолор сөздүгү
+        const translations = {
+            kg: {
+                page_title: "Эл Суши - Эң Даамдуу Суши, Сеттер жана Пиццалар",
+                work_hours: "Күн сайын 10:00 - 23:00",
+                phone_label: "Ишеним телефону",
+                free_delivery_banner: "2500 сомдон жогору буйрутмаларга жеткирүү акысыз!",
+                selected_branch_label: "Тандалган филиал:",
+                nav_menu: "Меню",
+                nav_sets: "Сеттер",
+                nav_rolls: "Роллдор",
+                nav_pizza: "Пиццалар",
+                nav_combo: "Комбо",
+                nav_kfc: "KFC & Фастфуд",
+                nav_drinks: "Суусундуктар",
+                nav_sauces: "Соустар",
+                nav_branches: "Филиалдар",
+                cart_text: "Корзина",
+                hero_badge: "Премиум сапаттагы япон жана итальян тамактары",
+                hero_title_1: "Даамдуу тамактар",
+                hero_title_2: "Эл Суши & Пицца менен!",
+                hero_desc: "Эң жаңы лосось, кытырак роллдор, даамдуу пиццалар, комбо топтомдор жана суусундуктар. Онлайн буйрутма бериңиз!",
+                hero_btn_menu: "Товарлардан тандоо",
+                hero_btn_branches: "Филиалдарды көрүү",
+                hit_badge: "Хит Продаж 🔥",
+                hit_title: "«Эл Супрем» Сети",
+                hit_pieces: "40 кесим",
+                products_heading: "Товарлар",
+                products_sub: "Ар бир категориядан өзүңүзгө жаккан тамакты тандап, корзинага кошуңуз.",
+                select_cat_label: "Категорияны тандоо",
+                cat_all: "🍽️ Бардык товарлар",
+                cat_sets: "🍣 Сеттер",
+                cat_rolls: "🍱 Роллдор",
+                cat_pizza: "🍕 Пиццалар",
+                cat_combo: "🔥 Комбо топтомдор",
+                cat_kfc: "🍗 KFC & Фастфуд",
+                cat_drinks: "🥤 Суусундуктар",
+                cat_sauces: "🥫 Соустар",
+                branches_heading: "Филиалдар",
+                branches_sub: "Борборубуздагы эң ыңгайлуу филиалдарыбыздын бирине келип даам сызыңыз.",
+                footer_about: "Эң сапаттуу жана таза азыктардан даярдалган япон жана итальян тамактары, комбо топтомдор жана суусундуктар.",
+                footer_links_title: "Ыкчам шилтемелер",
+                footer_link_1: "Биздин товарлар",
+                footer_link_2: "Сеттер",
+                footer_link_3: "Комбо топтомдор",
+                footer_link_4: "Филиалдар",
+                footer_contacts_title: "Байланыш маалыматтары",
+                footer_rights: "© 2026 Эл Суши Бишкек. Бардык укуктар корголгон.",
+                cart_title: "Сиздин корзинаңыз",
+                subtotal_label: "Товарлардын баасы:",
+                delivery_label: "Жеткирүү:",
+                free_delivery_text: "Акысыз (2500 сомдон жогору)",
+                paid_delivery_text: "200 сом (2500 сомго жетпейт)",
+                total_label: "Жалпы сумма:",
+                checkout_btn: "Буйрутманы тариздөө",
+                modal_title: "Буйрутманы WhatsApp аркылуу жиберүү",
+                form_type_label: "Буйрутма ыкмасы *",
+                type_delivery: "Жеткирүү",
+                type_pickup: "Өзү алып кетүү",
+                form_name_label: "Аты-жөнүңүз *",
+                form_phone_label: "Телефон номериңиз *",
+                form_address_label: "Жеткирүү дареги *",
+                form_branch_label: "Алып кетүүчү филиал *",
+                form_payment_label: "Төлөө ыкмасы",
+                pay_cash: "Накталай акча (курьерге / кассага)",
+                pay_card: "Банктык карта (МБанк / ЭЛКАРТ)",
+                form_comment_label: "Кошумча каалоолор",
+                whatsapp_send_btn: "WhatsApp аркылуу жиберүү",
+                price_text: "Баасы",
+                pieces_text: "даана",
+                add_to_cart_notif: "корзинага кошулду!",
+                empty_cart: "Корзинаңызыңыз бош",
+                toast_success: "Ийгиликтүү аткарылды!"
+            },
+            ru: {
+                page_title: "Эль Суши - Самые Вкусные Суши, Сеты и Пиццы",
+                work_hours: "Каждый день 10:00 - 23:00",
+                phone_label: "Телефон доверия",
+                free_delivery_banner: "Доставка бесплатна при заказах свыше 2500 сомов!",
+                selected_branch_label: "Выбранный филиал:",
+                nav_menu: "Меню",
+                nav_sets: "Сеты",
+                nav_rolls: "Роллы",
+                nav_pizza: "Пицца",
+                nav_combo: "Комбо",
+                nav_kfc: "KFC & Фастфуд",
+                nav_drinks: "Напитки",
+                nav_sauces: "Соусы",
+                nav_branches: "Филиалы",
+                cart_text: "Корзина",
+                hero_badge: "Японские и итальянские блюда премиум качества",
+                hero_title_1: "Вкусная еда",
+                hero_title_2: "с Эль Суши & Пицца!",
+                hero_desc: "Свежайший лосось, хрустящие роллы, вкуснейшие пиццы, комбо наборы и напитки. Заказывайте онлайн!",
+                hero_btn_menu: "Выбрать товары",
+                hero_btn_branches: "Посмотреть филиалы",
+                hit_badge: "Хит Продаж 🔥",
+                hit_title: "Сет «Эль Супрем»",
+                hit_pieces: "40 кусочков",
+                products_heading: "Товары",
+                products_sub: "Выберите понравившееся блюдо из каждой категории и добавьте в корзину.",
+                select_cat_label: "Выбрать категорию",
+                cat_all: "🍽️ Все товары",
+                cat_sets: "🍣 Сеты",
+                cat_rolls: "🍱 Роллы",
+                cat_pizza: "🍕 Пицца",
+                cat_combo: "🔥 Комбо наборы",
+                cat_kfc: "🍗 KFC & Фастфуд",
+                cat_drinks: "🥤 Напитки",
+                cat_sauces: "🥫 Соусы",
+                branches_heading: "Филиалы",
+                branches_sub: "Приходите и отведите душу в одном из наших самых удобных филиалов в центре.",
+                footer_about: "Японские и итальянские блюда, комбо наборы и напитки, приготовленные из качественных и чистых продуктов.",
+                footer_links_title: "Быстрые ссылки",
+                footer_link_1: "Наши товары",
+                footer_link_2: "Сеты",
+                footer_link_3: "Комбо наборы",
+                footer_link_4: "Филиалы",
+                footer_contacts_title: "Контактные данные",
+                footer_rights: "© 2026 Эль Суши Бишкек. Все права защищены.",
+                cart_title: "Ваша корзина",
+                subtotal_label: "Стоимость товаров:",
+                delivery_label: "Доставка:",
+                free_delivery_text: "Бесплатно (свыше 2500 сомов)",
+                paid_delivery_text: "200 сомов (меньше 2500 сомов)",
+                total_label: "Итоговая сумма:",
+                checkout_btn: "Оформить заказ",
+                modal_title: "Отправить заказ через WhatsApp",
+                form_type_label: "Способ заказа *",
+                type_delivery: "Доставка",
+                type_pickup: "Самовывоз",
+                form_name_label: "Ваше имя *",
+                form_phone_label: "Ваш номер телефона *",
+                form_address_label: "Адрес доставки *",
+                form_branch_label: "Филиал самовывоза *",
+                form_payment_label: "Способ оплаты",
+                pay_cash: "Наличные деньги (курьеру / в кассу)",
+                pay_card: "Банковская карта (MBank / Elcart)",
+                form_comment_label: "Дополнительные пожелания",
+                whatsapp_send_btn: "Отправить через WhatsApp",
+                price_text: "Цена",
+                pieces_text: "штук",
+                add_to_cart_notif: "добавлен в корзину!",
+                empty_cart: "Ваша корзина пуста",
+                toast_success: "Успешно выполнено!"
+            }
+        };
+
+        const products = [
+            // Комбо
+            { id: 501, name_kg: "Cет 1500 №1", name_ru: "Cет 1500 №1", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо1.jpeg" },
+            { id: 502, name_kg: "Комбо 1500 №2", name_ru: "Комбо 1500 №2", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо2.jpeg" },
+            { id: 503, name_kg: "Комбо №3 (Хит Фастфуд)", name_ru: "Комбо №3 (Хит Фастфуд)", category: "комбо", price: 1200, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо3.jpeg" },
+            { id: 503, name_kg: "Комбо 999 ", name_ru: "Комбо 999 ", category: "комбо", price: 999, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо4.jpeg" },
+            { id: 503, name_kg: "Комбо 1300", name_ru: "Комбо 1300 ", category: "комбо", price: 1300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо5.jpeg" },
+            { id: 503, name_kg: "Комбо 2300 ", name_ru: "Комбо 2300 ", category: "комбо", price: 999, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо6.jpeg" },
+            // Сеттер
+            { id: 1, name_kg: "Сет 100", name_ru: "Сет 100", category: "сеттер", price: 2600, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет 100.jpeg" },
+            { id: 2, name_kg: "Сет Большой", name_ru: "Сет Большой", category: "сеттер", price: 2800, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет болшой.jpeg" },
+            { id: 3, name_kg: "Сет Для себя", name_ru: "Сет Для себя", category: "сеттер", price: 1100, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет для себя.jpeg" },
+            { id: 4, name_kg: "Сет Запеченный", name_ru: "Сет Запеченный", category: "сеттер", price: 1500, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет запеченный.jpeg" },
+            { id: 5, name_kg: "Сет Золотая", name_ru: "Сет Золотая", category: "сеттер", price: 1750, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет золотая.jpeg" },
+            { id: 6, name_kg: "Сет Мини", name_ru: "Сет Мини", category: "сеттер", price: 900, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет мини.jpeg" },
+            { id: 7, name_kg: "Сет От шефа", name_ru: "Сет От шефа", category: "сеттер", price: 1200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет от шефа.jpeg" },
+            { id: 8, name_kg: "Сет Семья", name_ru: "Сет Семья", category: "сеттер", price: 1600, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет семья.jpeg" },
+            { id: 9, name_kg: "Сет Суши Бест", name_ru: "Сет Суши Бест", category: "сеттер", price: 1500, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет суши бест .jpeg" },
+            { id: 10, name_kg: "Сет Фирменный", name_ru: "Сет Фирменный", category: "сеттер", price: 2200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет фирменный.jpeg" },
+            { id: 11, name_kg: "Сет Чикен", name_ru: "Сет Чикен", category: "сеттер", price: 1200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет чикен.jpeg" },
+            // Роллдор
+
+            { id: 12, name_kg: "Бургер с креветкой ролл", name_ru: "Бургер с креветкой роллы", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Бургер с креветкой роллы.jpeg" },
+            { id: 13, name_kg: "Жар кол 10ш", name_ru: "Жар кол 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар кол 10ш.jpeg" },
+            { id: 14, name_kg: "Жар фил 10ш", name_ru: "Жар фил 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар фил 10ш.jpeg" },
+            { id: 15, name_kg: "Жар цез 10ш", name_ru: "Жар цез 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар цез 10ш.jpeg" },
+            { id: 16, name_kg: "Жаренный ролл с креветкой", name_ru: "Жаренный ролл с креветкой", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Жаренный ролл с креветкой.jpeg" },
+            { id: 17, name_kg: "Запеч ролл с крабовыми", name_ru: "Запеч ролл с крабовыми", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с крабовыми палочками.jpeg" },
+            { id: 18, name_kg: "Запеч ролл с курицей", name_ru: "Запеч ролл с курицей", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с курицей.jpeg" },
+            { id: 19, name_kg: "Запеченный ролл с курицей", name_ru: "Запеченный ролл с курицей", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с курицей острый.jpeg" },
+            { id: 20, name_kg: "Запеченный ролл с лососем", name_ru: "Запеченный ролл с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с лососем.jpeg" },
+            { id: 21, name_kg: "Ролл с икрой", name_ru: "Калифорния с икрой", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с икрой.jpeg" },
+            { id: 22, name_kg: "Ролл с лососем", name_ru: "Калифорния с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с лас.jpeg" },
+            { id: 23, name_kg: "Мини с лососем 10ш", name_ru: "Мини с лососем (10 шт.)", category: "роллдор", price: 200, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/мини с лас 10ш.jpeg" },
+            { id: 24, name_kg: "Мини с огурцом 10ш", name_ru: "Мини с огурцом (10 шт.)", category: "роллдор", price: 200, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/мини с огур 10ш.jpeg" },
+            { id: 25, name_kg: "Ролл дракон", name_ru: "Ролл Дракон", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол дракон.jpeg" },
+            { id: 26, name_kg: "Ролл сэндвич", name_ru: "Ролл Сэндвич", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол сендвич.jpeg" },
+            { id: 27, name_kg: "Ролл сырный", name_ru: "Ролл сырный", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/рол сырный.jpeg" },
+            { id: 28, name_kg: "Ролл бургер с лососем", name_ru: "Ролл бургер с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/Ролл бургер с лососем.jpeg" },
+            { id: 29, name_kg: "Суши конверт", name_ru: "Суши конверт", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/суши конверт.jpeg" },
+            { id: 30, name_kg: "Фила бтг", name_ru: "Филадельфия биг", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/фила бтг.jpeg" },
+            { id: 31, name_kg: "Фила классик", name_ru: "Филадельфия классика", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила классик.jpeg" },
+            { id: 32, name_kg: "Фила лайт", name_ru: "Филадельфия лайт", category: "роллдор", price: 450, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила лайт.jpeg" },
+
+            // Пиццалар
+            { id: 101, name_kg: "Пицца 4 сыра (30 см)", name_ru: "Пицца 4 сыра (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Төрт түрдүү сыр кошулган даамдуу пицца.", desc_ru: "Пицца с четырьмя видами сыра.", image: "img пиццв/4 сыра.jpeg" },
+            { id: 102, name_kg: "Пицца 4 сыра (40 см)", name_ru: "Пицца 4 сыра (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Төрт түрдүү сыр кошулган чоң өлчөмдөгү пицца.", desc_ru: "Пицца большого размера с четырьмя видами сыра.", image: "img пиццв/4 сыра.jpeg" },
+            { id: 103, name_kg: "Куриная пицца (30 см)", name_ru: "Куриная пицца (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Тоок эти кошулган даамдуу пицца.", desc_ru: "Пицца с куриным мясом.", image: "img пиццв/куриная.jpeg" },
+            { id: 104, name_kg: "Куриная пицца (40 см)", name_ru: "Куриная пицца (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Тоок эти кошулган чоң өлчөмдөгү пицца.", desc_ru: "Пицца большого размера с куриным мясом.", image: "img пиццв/куриная.jpeg" },
+            { id: 105, name_kg: "Пицца Маргарита (30 см)", name_ru: "Пицца Маргарита (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Классикалык маргарита пиццасы.", desc_ru: "Классическая пицца маргарита.", image: "img пиццв/маргарита.jpeg" },
+            { id: 106, name_kg: "Пицца Маргарита (40 см)", name_ru: "Пицца Маргарита (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Классикалык маргарита пиццасы (чоң).", desc_ru: "Классическая пицца маргарита (большая).", image: "img пиццв/маргарита.jpeg" },
+            { id: 107, name_kg: "Пицца Пепперони (30 см)", name_ru: "Пицца Пепперони (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Пепперони колбасасы кошулган пицца.", desc_ru: "Пицца с пепперони.", image: "img пиццв/пеперони.jpeg" },
+            { id: 108, name_kg: "Пицца Пепперони (40 см)", name_ru: "Пицца Пепперони (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Пепперони колбасасы кошулган чоң пицца.", desc_ru: "Большая пицца с пепперони.", image: "img пиццв/пеперони.jpeg" },
+            { id: 109, name_kg: "Чили пицца (30 см)", name_ru: "Чили пицца (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Ачуу чили калемпири кошулган пицца.", desc_ru: "Пицца с перцем чили.", image: "img пиццв/чили.png" },
+            { id: 110, name_kg: "Чили пицца (40 см)", name_ru: "Чили пицца (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Ачуу чили калемпири кошулган чоң пицца.", desc_ru: "Большая пицца с перцем чили.", image: "img пиццв/чили.png" },
+            { id: 111, name_kg: "Шашлычная пицца (30 см)", name_ru: "Шашлычная пицца (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Шашлык даамын эске салган пицца.", desc_ru: "Пицца со вкусом шашлыка.", image: "img пиццв/шашлычная.jpeg" },
+            { id: 112, name_kg: "Шашлычная пицца (40 см)", name_ru: "Шашлычная пицца (40 см)", category: "пиццалар", price: 600, pieces_kg: "40 см", pieces_ru: "40 см", desc_kg: "Шашлык даамындагы чоң пицца.", desc_ru: "Большая пицца со вкусом шашлыка.", image: "img пиццв/шашлычная.jpeg" },
+            // KFC & Фастфуд
+            { id: 201, name_kg: "Крылышки 30 шт", name_ru: "Крылышки 30 шт", category: "kfc", price: 1800, pieces_kg: "30 даана", pieces_ru: "30 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "kfc/крылышки 30ш.jpeg" },
+            { id: 202, name_kg: "Наггетсы 20 шт", name_ru: "Наггетсы 20 шт", category: "kfc", price: 400, pieces_kg: "20 даана", pieces_ru: "20 штук", desc_kg: "Тоок этинен наггетстер.", desc_ru: "Куриные наггетсы.", image: "kfc/наегтсы 20ш.jpeg" },
+            { id: 203, name_kg: "Картофель фри стандарт", name_ru: "Картофель фри стандарт", category: "kfc", price: 150, pieces_kg: "1 порция", pieces_ru: "1 порция", desc_kg: "Алтын түстөгү картошка фри.", desc_ru: "Золотистый картофель фри.", image: "kfc/фри стан.jpeg" },
+            { id: 204, name_kg: "Шаурма двойная", name_ru: "Шаурма двойная", category: "kfc", price: 250, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Эт жана соустар кошулган шаурма.", desc_ru: "Шаурма с мясом и соусами.", image: "kfc/шаурма двойной.jpeg" },
+            { id: 205, name_kg: "Шаурма классика", name_ru: "Шаурма классика", category: "kfc", price: 200, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Классикалык шаурма.", desc_ru: "Классическая шаурма.", image: "" },
+            { id: 206, name_kg: "Шаурма мини", name_ru: "Шаурма мини", category: "kfc", price: 160, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Мини шаурма.", desc_ru: "Шаурма мини.", image: "" },
+            { id: 207, name_kg: "Наггетсы 15 шт", name_ru: "Наггетсы 15 шт", category: "kfc", price: 300, pieces_kg: "15 даана", pieces_ru: "15 штук", desc_kg: "Тоок наггетстери.", desc_ru: "Куриные наггетсы.", image: "" },
+            { id: 208, name_kg: "Наггетсы 10 шт", name_ru: "Наггетсы 10 шт", category: "kfc", price: 200, pieces_kg: "10 даана", pieces_ru: "10 штук", desc_kg: "Тоок наггетстери.", desc_ru: "Куриные наггетсы.", image: "" },
+            { id: 209, name_kg: "Крылышки 25 шт", name_ru: "Крылышки 25 шт", category: "kfc", price: 1500, pieces_kg: "25 даана", pieces_ru: "25 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "" },
+            { id: 210, name_kg: "Крылышки 20 шт", name_ru: "Крылышки 20 шт", category: "kfc", price: 1200, pieces_kg: "20 даана", pieces_ru: "20 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "" },
+            { id: 211, name_kg: "Крылышки 15 шт", name_ru: "Крылышки 15 шт", category: "kfc", price: 900, pieces_kg: "15 даана", pieces_ru: "15 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "" },
+            { id: 212, name_kg: "Крылышки 10 шт", name_ru: "Крылышки 10 шт", category: "kfc", price: 600, pieces_kg: "10 даана", pieces_ru: "10 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "" },
+            { id: 213, name_kg: "Крылышки 5 шт", name_ru: "Крылышки 5 шт", category: "kfc", price: 300, pieces_kg: "5 даана", pieces_ru: "5 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "" },
+            { id: 214, name_kg: "Фри большой", name_ru: "Фри большой", category: "kfc", price: 250, pieces_kg: "1 порция", pieces_ru: "1 порция", desc_kg: "Чоң порция картошка фри.", desc_ru: "Большая порция картофеля фри.", image: "" },
+            // Соустар
+            { id: 301, name_kg: "Кетчуп", name_ru: "Кетчуп", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Фирменный кетчуп.", desc_ru: "Фирменный кетчуп.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ07ZkJm4U1QQMUBinKFDrFtYL9tZwEIfKV-EMSA-Leow&s=10" },
+            { id: 302, name_kg: "Сырный соус", name_ru: "Сырный соус", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Сыр соусу.", desc_ru: "Сырный соус.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuyONF3sOPSkNafMdyDGgPP6h6tSvGxHT7o8D-TipbkA&s=10" },
+            { id: 303, name_kg: "Чесночный соус", name_ru: "Чесночный соус", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Сарымсак соусу.", desc_ru: "Чесночный соус.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSav1fdMJxAxmpSQBrmp183sfRPHk__A03kyhyBdxn2nw&s=10" },
+            // Суусундуктар
+            { id: 401, name_kg: "Кока-Кола 2л", name_ru: "Кока-Кола 2л", category: "суусундуктар", price: 200, pieces_kg: "2 л", pieces_ru: "2 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSKscY52jG9CoT3Rn8_MXQZKveUJ2h7PXmKxMlyxb66w&s=10" },
+            { id: 402, name_kg: "Фанта 1.5л", name_ru: "Фанта 1.5л", category: "суусундуктар", price: 150, pieces_kg: "1.5 л", pieces_ru: "1.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmap6gjv07H5Id17tjgXdE9cqUP0l1zBJ99mwGHBeC8w&s=10" },
+            { id: 403, name_kg: "Фанта 2л", name_ru: "Фанта 2л", category: "суусундуктар", price: 200, pieces_kg: "2 л", pieces_ru: "2 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu8bWkXXtD7-WypSw8kU7EN5PkB56ZrPrkHfD69KhczA&s=10" },
+            { id: 404, name_kg: "Ава 1л", name_ru: "Ава 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Суусундук.", desc_ru: "Напиток.", image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQEBUSEREQEhUVEhYRFhcYExUSExMYFRMWFhgYExMYHjQgGCYoGxUYITMhJikrMC4uGB84ODMsNygtLisBCgoKDg0OGhAQGzIlICYwMDUvKy81LS8tMi0vLS0tLTItLS01LS0vLTItLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABQcEBgECAwj/xAA+EAACAQIEAwYDBQYFBQEAAAAAAQIDEQQSITEFQVEGEyIyYXGBkaFCUrHB8AcUI5LR4TNjcrLxJENigsIV/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQFAQMGAgf/xAAzEQEAAgEDAgQEBQMEAwAAAAAAAQIDBBEhEjEFE0FRFCJhcTKBkbHwBiOhFTPB4UJS0f/aAAwDAQACEQMRAD8AvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcSdjze0VrNp9CEdPHSvoopet2zis/9VZOqfKpG31SYwR6sXEcadN2ll2v5Xte3XQzh/qTVW5mkT+sMzgj3SXD8ZGtDNHrZ+jOp0GsrqsXmRG3vCPavTOzKJryAAAAAAAAAAAAAAAAAAAAAAAAAAAA86/lfs/wI+rjfBfb2n9ma94QkqySu3ZdbafM+W10WeY3ik7J7wqQp1ldNvS2l3zubsem1NO1N2Z4SfAqOSnZO6zO23u9vVnZf051+RabRtvb/iETP+JJnRNIAAAAAAAAAAAAAAAAAAAAAAAAAAADpVgpJqW3MxMbwQjsPQhlaywvfpqlZbu25W3wY7RMTEbtu9txYOGRpwpPp/d5TXj0uOlZ4jcm87s3C00ldK19yyxREVjZrmd5e5tYAAAAAAAAAAAAAAAAAAAAAAAAAAAj+L8Wp4aGao9X5YrzSfp/U8XvFI3lsxYrZJ2qr7ifbDEVpNUpKCvbRJqPxtdsrNRr4p3/AEW+PQUpG9oas+1leMpxqV63hfikpNOzatJRXLVafpxsk2y7WrxusfgKdFb1jfdnw41i6U6UniKsqUpK8s2aDjLZ3fT9dBps09fTklqnT4clJ6Y+b2S8e2dehWyupGacmkpRSzZZOOjjbo/1a9rOTpQ48O66b7N/4FxynioXjpJK7jz90+aN9MkXjhVZ9PfDO1kqe2kAAAAAAAAAAAAAAAAAAAAAAAAOlaooxcnsk2/ZK5iZ2jdmI3nZTnaDiNXGVXlck5yyJL7EeUY+trXfqUWfVb/NP5Q6nS6emCnPp3+6Sp9masaMVTglZdYtN+qvcq74stp65jf90LLqYtffdAYXsXiquJnGdN06dSGVzlqk9PIt6nlvp11sW+DBkyUrMRtt7ptfFcWPTxv+KPSP52bJhuzk8NF0JJ1aabUZpbJt2VSP2Xb4PkyPq9JamWd4npn1hDnWVy2668W9kRxzsfWjHNSipR+43a3R05Ly8tNulue/H1442vO8f5TNL4hSZ6b/AM+7x4Di6uGnCS3VRRlbZNqV7el7ae5rwanpyzt2bNXhx5q7R7LlwWJVWnGa2kk/7F/E7xu5O9Jpaay9zLyAAAAAAAAAAAAAAAAAAAAAAAI/tBK2Fq/6Gvnp+Zry/glv00b5a/dofZzhbq4qUt1StZW8zknfnporXKrDgnLn3ntELrX6jy8UUjvKx1QVt5fzSX4MuYc84hRjFu0UnzfN+75mWXLpRlq1qtns17NaoEuksJFr+yl/uR4msT6HVMK87U8LdGo5QUVCc0rWldNLWyfJ2dnqUmvxxhyebt34X2g1MZa9Nu8Q3HslL/pkvuycfa1v6lvp5mccTKr123nTsmjciAAAAAAAAAAAAAAAAAAAAAAADA47G+Gqr/LZ4yfhlu087Za/dCdkZ3oVMrSlFySb2TcVK7+a+Rp0m3R+aT4jG2X8oa7i+OToYGVd4pQq0ZxWbvu9jWcpPMrZnF6OLUbJ6PkWtMcWyRXbiVf6NU7V9pMVTWD4nhq2JjRxDzTpd7U7pVaE7Tgot6Rmou0fSRJwYaz1Y7RzDMLTnVli8Rh50K840FhpYmSjJx73vnDuFK3K0Kr+HqV23TExMc/zdlEUOK4lUK0qlVxr01Kp56cqbUbeCNNbprNrurLU3TSk3iK9peWbisfDGcOjiHFXd423SqRm6bt7Ti7ej9SHq8FdrY78w36e1uuOjulOykf+nb61Jv5O35GYiIiNnnN+OU0ZawAAAAAAAAAAAAAAAAAAAAAAB4Y6GalNdYSXzizFuz1SdrRLQezmHeIpY3CqWV1KVk+Sc4OOvp4Vc8aWeiftKz8Srv02RFTs/wATq8Hr8OnhYwmqjnGo6tNwrxVRVVGmk7qV1lvKyslrfRWXnY4zRk9FTtxsUOy2Kr9nP3KrhZ08Th5upSUnTtUfeyksklKyvCco6236Hr4itdT5kTxLMdmBw7sxxV8GxWGnTqQq5qMacHOF6lCF3KlGUZW3ctG9b22Z6vlwefW0dvX7sJTgOCxUeBPDywddVlO9Rziryiq2aLgvNJqKirW0yt9L+cl6TqerfhjbhsWCwsocMw1KSdNytKopRcXC83VqZk9Vpm+JW63L8/HeZ2j+fZvwzFZm0+kf5bLwGFsNT0teOf8Anbl+Z7t32a5neUgYYAAAAAAAAAAAAAAAAAAAAAAAHWaun7AhX/YidsZUV96a+jsv9xpxfilceIf7NZ+rc6ve/ZXOp92z8N6e/rp7roblOxJ1MYnTWWm7zefLayWaCj5pJpZXUbau7qOj2eeGXKxWLXe3oxdpfwrNXmu9qLxXlo1BQfxXWyzwMmtXrJyyxVlKCjeL2coqWz8Wjk+VrIxww139oWLcIUoxds9TK/WOWTa+hrtG81+6TpsHmWmfSsbttwkbU4LpCK+SRsnujPUwAAAAAAAAAAAAAAAAAAAAAAADiWwIUhUxVTC18JiYuWXMozipNOUZOMWnyfO19mkQJydOTh1tcNc+C+Ke+3E/VcOGxcKtJSc0lOO98rs1yfX80ToneN4cpek0tNZeP/5Sl5a+ISat4aun/b1Tt/lr+af3met3l3jw5q/8es733ntfvNun+Iv5I9BuMqVVQh5k2lbV6v3MMxHKou0HaD99x1NQnmoJXh4bZpXSlLXXTWNvS/NkWmeMmTjtDpMeh+H0d7Xj553/AEXJFWViU5pyAAAAAAAAAAAAAAAAAAAAAAAAcS2AojtNJXoK6Sjlb6ayj+N7EW9PV2WkvFKWtZLR4rOjhs0as4JTy+Gco6tNx0W97P5Hm29e0o1aY82Tp6Yln9gO1OJrZu+kpK8nGTSzpK1lJK3ea9dfXkaqa2Yy+XbsjeJeG4qR1YuJ9mwLtEnLNOLhHrLLOc3vlhZ2d7Py6LXoK6y17dumvuhfA7cRzLrxjtBmp5VBwzLe61VtpW2Gpy2vXaspGl0PTkibcqr7NXnXhLbxy+vi/wDk8aKu2R0Pi3GnmPp/w+iS0cGAAAAAAAAAAAAAAAAAAAAAAAAHDA+eu1lSUcRTjDzXUY32vdKN/oyLmt013dhp9px7p+pwaNejvmmmnq5KM2k7tKL0er/rqUldbky5Z52iGnHkjDk+6C4dj+6cqbeXezd5Ju7TjK2q2VvZ3vues9Yzf3PVZThm0e/77e70rcRnKrCUnKVnljpljFPdK+vL6LojxN7TH29EnFpKVrMRG27ZKvE6dSFrWdtnd/Z5P4GfiYtHPdA+HvSyB4RGFPExjFW+1bpdJafDMTfDpm3M+s/seKzvht9IX0XDiQAAAAAAAAAAAAAAAAAAAAAAAA4YHz72yk4Y6m8uqvJ62vpp7WIOq2tjmPSXXaGN8FWxUeK0IUMt6rk0tHGLWyas1K2xz1qbdW0d2fhcmTL1bRs0bF6VZOLvmldfZu27LrbV+vMsMP4IiY4XOpvGHD5s8bfzZlcOxUZ1YqdZRinpeD1e2393yMZNPWImWjDrseXH/bjn2bU8HFQzRqVWrO7yuENI/wDl8jRGLH0cTMos5snXtasQhuCQzY9Svm2trp4Iq/4v5ll4ZH4eO27x4pWa6e8z6r/LVxYAAAAAAAAAAAAAAAAAAAAAAAAGBQfbud8dCTXlag0tN8y35bIpqxM4rfeXZaOsxiiYYmKxke7ulN2VoTi1s7vLVXNK7tdf1cKtL9UTv94/+J2LDM5OfVFOTyZ225Tn3cetklmfp5oxT6OWxJjebbQxrcVbb09KxM/n/wCLpg5qTcUoKa+zKSjCotvNJ2i9169L6k2K0yV2nifSXF0x5c8fFaafnifmr67+8fT78JbhmEqt5YOcIaqV5qcVdNeHK2m9Svz5q4OJtvP0dRptXnvj/v49re/v+Sa7JUIPHRUUnCC7tet/DL6t/Im6GLRj6rd5Z8StM6eer1XeWbiwAAAAAAAAAAAAAAAAAAAAAAAA4YkUF+0F/wAaU42alJcr73aKfT2msXrPpb1dpoecEb+yM/d0sPHNKnGU/HGGaV9elk/exqisZMkzSOyHX+ocOO/TPMR6sKhiacXFu04wdpWd7KV9vjv6W9UbLY55rHEy3Y9X8Re9sc8cTz9OJj8u6QeCpVp56c03zs4tp+sX/RpmmmW2CJrljeEHJ4Xb4j4rTX8uZ7xtwmquPhSp5HUp9400lHN4Ulu1a0fmQ8ejjLk65/CtaRkvaOrn6vbsHK1alayzTzddtVq/14kdBvERG3vDx4nWZpbf2XcS3GgAAAAAAAAAAAAAAAAAAAAAAABxLYCku1WFi603kUYxqNJpybm4xUW5Ju173d1bkUuozRF7Vi28yu9RqrafRRWOeqNvsjIYDNTqLTNUazt38kPLST3SvdtK3TqZyaquDFFPX1QtB4X5/wA+XeK+3rP5onF8N7uEppxelskY2/Pkk38CPiy+Zbp/y6rUzTBhr5dNumY22/RhLCXV+7k/kre6tc2Tk2nbdaxWk16phlV+GZI5ot2SvJW19bM91tujedz0+jaP2dyvVpt7urlXpez/AC+huxTNslYnsgeKf7VvsvItHFAAAAAAAAAAAAAAAAAAAAAAAABxLYCl+1NTxSinZttp7a95L/j4nP54mNR5lXY6OlbY46o3jZkYKFOEFFwztKzV8sduvyKrUZItfqtMvMVvvxOzEq8GdaorKMdU7K7s+V29WK6raOmI7pcajy6/Ny86UHd3hSlro7Wb92vke8lunvu9xO8cT+Tpi4xyt5Mv/u39Gj1izT1RESRjme7L/Z/STxNNJWUamb6P+x0VPl2lWa/J/asugnOVAAAAAAAAAAAAAAAAAAAAAAAADiez9gzHdSvHaMnUjPknfR8m72d+pSaq1ZttEOx016xTZm0MS+7y2Tu27aNa66807817ctaK196xX2ebYvm6t2BUx06afKU9Iq92ktHN9Oi5t+xspgptFt+yTGOuWYrHb1lG4avKMUk7NuT9LZm/zsSMkRMcplqRN5/noyOKVLUt9ZGnS16sv2eK903+zSl/GzdGl83b8mXVsv8Aex4/ef2UPiUbUmPdbhcObAAAAAAAAAAAAAAAAAAAAAAAADpXlaLfo/wPNp2iZZr3hSHaCl4s79r9LLl0/wCSjz5JnJ0w7TSxWa7fR3w9WOVSS316p36r35lVnpNckxLb0TPZgcQxsfFli03u5Scvr+vc20x77bpenxW9ZRvC5uc7t3t8jdnjaOErNEVjhnY1utONOGrvlXq2bNPjjBSclldkvFI3b32Nwqo31v4oP2V0kvxfxNGjzefraT6Ruo/EL9ULHOrc6AAAAAAAAAAAAAAAAAAAAAAAAGBx2/7vUyyUHl0b2TurX+Og2ieJZidp3hT3FsbGayzToz1dpXyys0rwns9nvYps/huopl8zHHVWfbv+cOi8P8RxRxedpR2AxGW8HJJPZteFP/VG8Un6tL2541Ok82ImYmJ+y1tlrHzUmJj6TCN4i7ye+mnhcbfI0Uw2pCyw56xDywODrSu4qeVK7la8Ulzk0nYkY8M3ns1anW468b8tj4LUw9Bd7Vrwck4qKSk5JOLk3lsvRX9WSs/h2XLgmlY7qHVaysTtMp7hvF54qo4U491BZ+8nLwytTyOSjH7Pmirv7z00NfhvgfwUzlyTvaY4iOym1Gri8bUWsmWaC5AAAAAAAAAAAAAAAAAAAAAAAAI/j9PNhaqtfwPT210fI1ZrzTHNo9HvHG9ohVeOpVO9hOrB4mnGdNyyRjnlGm608tSk2szc6kb20ai/Y16TxfTZI26umfr7t2XSZK8xG8MT934fLwzUaeSlTv3iq0ZylCNTvXdpJ3Sp6c2n11tIz2mPltv+cS0dM1n2R3GcHw10prC17TlXpQpt1ZWyOFJSnKLlZeOc3qm1leqSN+O2SZ+aOOfZmb395OGU+HSnOpWk5WxdSUKadWcnh7OMIrle9RSTbv8AwujYyXtWIiu0cfSOWObJrD1IqKWGw0pSeeMpKiqEGstaMZKVTxJ3qRlztkjtaxAy6zDTnJkj9d/2e64Lz2hnYPDTlXlVqZFKdR1FSpuTp5mqf+JN+fWlF2ta7e+lqjN45S0xiwxv9UuuitWJtdbCLOFeGQAAAAAAAAAAAAAAAAAAAAAAAeOLpZ6cofei4/NWNeanXjtX3h6rO1olWri09dGvx5nzy29eJdJSeN4cSm+oraa9uGeis+jwa9F8kbYy3/8Aaf1lnor7O0ZvqebXtPeZ/U6K+z0zNrVs19uzOzM4LQc69OK++m/ZeJ/REvQ0nJqKVj3/AG5R9Tbpx2lYx3rngAAAAAAAAAAAAAAAAAAAAAAAAAaX2swSp1VOKsppt9Myer+N0ch45pox5ovWOLfuuNBl6qTWfT9kFIpYWG7qqUpO0Yyk7Xsk5P6G3Hjtk/DG5a9a95dcp4tExO0sxMS7mGN249lOGKFNVmnmknboo35e9jrPB9FXHjjNbvP7KXW55vfojtDYS8QQAAAAAAAAAAAAAAAAAAAAAAAAAYfFeHxxFPJLTW6f3WRNZpKanH0W/KW3DmnFbqhqz7LV81r07X813+FjnP8AQs/VtvG3v/0s/wDUKbb7ctn4Xw2GHhljq3rKXOT/AFyOj0mkppqdNf1VmbNbLbeUX2h4A6r7ylZT+0nopet+pXeJeFedPmYu/r9UrS6vy/lt2RmA7L1ZNd61CN9UmnJ+1tEV+m8Fy2tvl4j/AC35ddSI+TmW5U4KKSSskrJdEjqq0isRWPRVTO87y7npgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/9k=" },
+            { id: 405, name_kg: "Салам Кола 1л", name_ru: "Салам Кола 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "data:image/png;base64,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" },
+            { id: 406, name_kg: "Да-Да 1л", name_ru: "Да-Да 1л", category: "суусундуктар", price: 120, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Шымыраң сок.", desc_ru: "Сок.", image: "data:image/jpeg;base64,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" },
+            { id: 407, name_kg: "Пепси 1л", name_ru: "Пепси 1л", category: "суусундуктар", price: 130, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS32IdCqQQJWj-XJJTLoToioMFi2dgUaCZfzYBzFDe32Q&s=10" },
+            { id: 408, name_kg: "Пиала 1л", name_ru: "Пиала 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Муздак чай.", desc_ru: "Холодный чай.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY47B4elYtbrwuMCJLcfh2SsH5jpzKNYmep9G5wksPzQ&s" },
+            { id: 409, name_kg: "Кока-Кола 1л", name_ru: "Кока-Кола 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaKYfOspNxbnpOZXTHVFxDzi7lkWEZ-5USAjnHNkje7g&s=10" },
+            { id: 410, name_kg: "Фьюсти 1л", name_ru: "Фьюсти 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Муздак чай.", desc_ru: "Холодный чай.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt2WPsxw64Xk1kBM7zzzZHBOQKj5a2Ks3Qb6kbsODh6g&s=10" },
+            { id: 411, name_kg: "Пико 1л", name_ru: "Пико 1л", category: "суусундуктар", price: 130, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Сок.", desc_ru: "Сок.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuajdPY8c1V5FEO2bgAeUSqPs8KaJodkTVsS9X3AcwqA&s=10" },
+            { id: 412, name_kg: "Фанта 1л", name_ru: "Фанта 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuajdPY8c1V5FEO2bgAeUSqPs8KaJodkTVsS9X3AcwqA&s=10" },
+            { id: 413, name_kg: "Фанта 0.5л", name_ru: "Фанта 0.5л", category: "суусундуктар", price: 70, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://alcomarket.md/public/products/thumbs/e824e9cb948310c18d162dd07c74b1c0.png" },
+            { id: 414, name_kg: "Пепси 0.5л", name_ru: "Пепси 0.5л", category: "суусундуктар", price: 60, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bElFB0Y5iipFP8APs4cWUd4EQK-HpS0A8w6vmAcHCw&s=10" },
+            { id: 415, name_kg: "Кока-Кола 0.5л", name_ru: "Кока-Кола 0.5л", category: "суусундуктар", price: 70, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzHEQuy9WfaYmI0kheHtBwxTwlAsfnYKwAUP1EG1ESg&s=10" },
+            { id: 416, name_kg: "Асу 0.5л", name_ru: "Асу 0.5л", category: "суусундуктар", price: 65, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Таза суу.", desc_ru: "Чистая вода.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjSehaOQi3i374My1g21XkYqGWpR1NU1R161Ajdfoqaw&s=10" },
+            { id: 417, name_kg: "Асу 1л", name_ru: "Асу 1л", category: "суусундуктар", price: 75, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Таза суу.", desc_ru: "Чистая вода.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTolsOD-vdGYY6HEe0y7S3dCHVIhOG_jyEc9yqPBfWHQ&s=10" },
+            { id: 418, name_kg: "Нектар Солнечный 0.5л", name_ru: "Нектар Солнечный 0.5л", category: "суусундуктар", price: 65, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Шымыраң сок.", desc_ru: "Сок.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBzhJtCKcNLudAEyJ9Eq1RwjvN7w72IiDmt2K_s21b7w&s=10" },
+            { id: 419, name_kg: "Нектар Солнечный 1л", name_ru: "Нектар Солнечный 1л", category: "суусундуктар", price: 130, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Шымыраң сок.", desc_ru: "Сок.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBzhJtCKcNLudAEyJ9Eq1RwjvN7w72IiDmt2K_s21b7w&s=10" },
+            { id: 420, name_kg: "Да-Да 0.5л", name_ru: "Да-Да 0.5л", category: "суусундуктар", price: 75, pieces_kg: "0.5 л", pieces_ru: "0.5 л", desc_kg: "Шымыраң сок.", desc_ru: "Сок.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7xz3jCDwHCjZBYxVJqQa1AoEAmTEK8QDFL4vY1eQ3iA&s" },
+            { id: 421, name_kg: "Кока-Кола 1.5л", name_ru: "Кока-Кола 1.5л", category: "суусундуктар", price: 150, pieces_kg: "1.5 л", pieces_ru: "1.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-tQS3luR5oWEnLa-heNk8oP2oylcQ6fwiL2jHPqgog&s=10" },
+        ];
+
+        const branches = [
+            { id: 1, name: "Панфиловка филиалы", address: "Мы находимся В Панфиловка Каиндийский остановка позади", phone: "+996 554 46 96 92", hours: "10:00 - 23:00", mapText: "Жеткирүү жана зал / Доставка и зал" },
+            { id: 2, name: "Кара-Балта филиалы", address: "Мы находимся В Кара-Балта улица Кожомбердиева Крылова 122/2", phone: "+996 554 46 96 92", hours: "10:00 - 23:00", mapText: "Жеткирүү жана зал / Доставка и зал" },
+            { id: 3, name: "Новопавловка филиалы", address: "Мы находимся В Новопавловка улица Фрунзе 281", phone: "+996 554 46 96 92", hours: "10:00 - 23:00", mapText: "Жеткирүү жана зал / Доставка и зал" }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        window.onload = function () {
+            setLanguage('kg'); // Башында кыргыз тилинде жүктөлөт
+            toggleOrderTypeFields();
+        };
+
+        // Тилди которуу функциясы
+        function setLanguage(lang) {
+            currentLang = lang;
+
+            // Баскычтардын дизайнын өзгөртүү
+            const btnKg = document.getElementById('lang-kg');
+            const btnRu = document.getElementById('lang-ru');
+            if (lang === 'kg') {
+                btnKg.className = "px-2.5 py-1.5 rounded-lg transition bg-brand-600 text-white shadow";
+                btnRu.className = "px-2.5 py-1.5 rounded-lg transition text-slate-400 hover:text-white";
+            } else {
+                btnRu.className = "px-2.5 py-1.5 rounded-lg transition bg-brand-600 text-white shadow";
+                btnKg.className = "px-2.5 py-1.5 rounded-lg transition text-slate-400 hover:text-white";
+            }
+
+            // Бардык атрибуттары бар тексттерди которуу
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Барактын атын которуу
+            document.getElementById('page-title').textContent = translations[lang].page_title;
+
+            // Товарлар менен филиалдарды кайрадан рендерлөө
+            renderProducts(currentCategory === 'all' ? products : products.filter(p => p.category.toLowerCase() === currentCategory.toLowerCase()));
+            renderBranches();
+            updateCartUI();
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function renderProducts(items) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500">${currentLang === 'kg' ? 'Бул категорияда товарлар жок.' : 'В этой категории нет товаров.'}</div>`;
+                return;
+            }
+
+            items.forEach(product => {
+                const name = currentLang === 'kg' ? product.name_kg : product.name_ru;
+                const pieces = currentLang === 'kg' ? product.pieces_kg : product.pieces_ru;
+                const desc = currentLang === 'kg' ? product.desc_kg : product.desc_ru;
+
+                const card = document.createElement('div');
+                card.className = 'bg-slate-900 border border-slate-800 rounded-3xl p-4 shadow-xl flex flex-col justify-between hover:border-slate-700 transition duration-300 group';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative aspect-video sm:aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-950 flex items-center justify-center">
+                            <img src="${product.image}" alt="${name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x300/1e293b/f8fafc?text=Эл+Суши';">
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+                            <span class="uppercase tracking-wider text-brand-500">${product.category}</span>
+                            <span>${pieces}</span>
+                        </div>
+                        <h3 class="font-extrabold text-white text-lg mb-1">${name}</h3>
+                        <p class="text-slate-400 text-xs line-clamp-2 mb-4">${desc}</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+                        <div>
+                            <span class="text-xs text-slate-500 block">${translations[currentLang].price_text}</span>
+                            <span class="text-lg font-black text-brand-500">${product.price} сом</span>
+                        </div>
+                        <button onclick="addToCart(${product.id})" class="bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white w-11 h-11 rounded-2xl flex items-center justify-center font-bold transition shadow-md">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterMenu(category) {
+            currentCategory = category;
+            const selectEl = document.getElementById('category-select');
+            if (selectEl) selectEl.value = category;
+
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                const attr = btn.getAttribute('onclick');
+                if (attr && attr.includes(category)) {
+                    btn.className = 'category-btn active-cat px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-brand-600 text-white shadow-lg shadow-brand-600/30';
+                } else {
+                    btn.className = 'category-btn px-5 py-2.5 rounded-2xl font-bold text-sm transition bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700';
+                }
+            });
+
+            if (category === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+                renderProducts(filtered);
+            }
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            const prodName = currentLang === 'kg' ? product.name_kg : product.name_ru;
+            showNotification(`"${prodName}" ${translations[currentLang].add_to_cart_notif}`);
+        }
+
+        function changeQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+            }
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-drawer').classList.toggle('hidden');
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const deliveryFeeEl = document.getElementById('cart-delivery-fee');
+            const totalEl = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            badge.textContent = totalCount;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16 space-y-3">
+                        <div class="w-16 h-16 bg-slate-800 text-slate-500 rounded-full flex items-center justify-center mx-auto text-2xl">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <p class="text-slate-400 font-semibold">${translations[currentLang].empty_cart}</p>
+                    </div>
+                `;
+                subtotalEl.textContent = '0 сом';
+                deliveryFeeEl.textContent = translations[currentLang].free_delivery_text;
+                totalEl.textContent = '0 сом';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            container.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemName = currentLang === 'kg' ? item.name_kg : item.name_ru;
+                subtotal += item.price * item.quantity;
+                const div = document.createElement('div');
+                div.className = 'flex items-center justify-between py-3';
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <img src="${item.image}" alt="${itemName}" class="w-14 h-14 rounded-xl object-cover bg-slate-800" onerror="this.src='https://placehold.co/100x100/1e293b/f8fafc?text=Эл';">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">${itemName}</h4>
+                            <span class="text-brand-500 font-extrabold text-xs">${item.price} сом x ${item.quantity}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQuantity(${item.id}, -1)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg font-bold flex items-center justify-center transition">-</button>
+                        <span class="text-sm font-bold w-5 text-center text-white">${item.quantity}</span>
+                        <button onclick="changeQuantity(${item.id}, 1)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg font-bold flex items-center justify-center transition">+</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            subtotalEl.textContent = `${subtotal} сом`;
+
+            let deliveryFee = subtotal >= 2500 ? 0 : 200;
+            if (subtotal >= 2500) {
+                deliveryFeeEl.textContent = translations[currentLang].free_delivery_text;
+                deliveryFeeEl.className = 'font-bold text-emerald-400';
+            } else {
+                deliveryFeeEl.textContent = translations[currentLang].paid_delivery_text;
+                deliveryFeeEl.className = 'font-bold text-amber-400';
+            }
+
+            const total = subtotal + deliveryFee;
+            totalEl.textContent = `${total} сом`;
+        }
+
+        function renderBranches() {
+            const grid = document.getElementById('branches-grid');
+            grid.innerHTML = '';
+
+            branches.forEach(branch => {
+                const card = document.createElement('div');
+                card.className = 'bg-slate-900 rounded-3xl p-6 border border-slate-800 flex flex-col justify-between shadow-xl hover:border-slate-700 transition';
+                card.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-500 flex items-center justify-center font-bold border border-brand-500/30">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="font-extrabold text-white text-lg">${branch.name}</h3>
+                        <p class="text-slate-300 text-sm"><i class="fa-solid fa-location-dot text-brand-500 mr-2"></i>${branch.address}</p>
+                        <p class="text-slate-300 text-sm"><i class="fa-solid fa-phone text-brand-500 mr-2"></i><a href="tel:+996554469692" class="hover:underline">${branch.phone}</a></p>
+                        <p class="text-slate-300 text-sm"><i class="fa-solid fa-clock text-brand-500 mr-2"></i>${branch.hours}</p>
+                        <p class="text-xs text-amber-400 italic mt-2"><i class="fa-solid fa-circle-info mr-1"></i>${branch.mapText}</p>
+                    </div>
+                    <button onclick="selectBranch('${branch.name}')" class="mt-6 w-full bg-slate-800 hover:bg-brand-600 text-slate-200 hover:text-white border border-slate-700 font-bold py-3 rounded-xl transition text-sm shadow-md">
+                        ${currentLang === 'kg' ? 'Бул филиалды тандоо' : 'Выбрать этот филиал'}
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function selectBranch(branchName) {
+            document.getElementById('current-branch-label').textContent = branchName;
+            showNotification(`"${branchName}" ${currentLang === 'kg' ? 'тандалды!' : 'выбран!'}`);
+        }
+
+        function toggleOrderTypeFields() {
+            const orderType = document.querySelector('input[name="order-type"]:checked').value;
+            const addressGroup = document.getElementById('delivery-address-group');
+            const branchGroup = document.getElementById('pickup-branch-group');
+            const addressInput = document.getElementById('order-address');
+
+            if (orderType === 'delivery') {
+                addressGroup.classList.remove('hidden');
+                branchGroup.classList.add('hidden');
+                addressInput.required = true;
+            } else {
+                addressGroup.classList.add('hidden');
+                branchGroup.classList.remove('hidden');
+                addressInput.required = false;
+            }
+        }
+
+        function openCheckoutModal() {
+            toggleCart();
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function submitOrderToWhatsApp(e) {
+            e.preventDefault();
+
+            const orderType = document.querySelector('input[name="order-type"]:checked').value;
+            const name = document.getElementById('order-name').value;
+            const phone = document.getElementById('order-phone').value;
+            const payment = document.getElementById('order-payment').value;
+            const comment = document.getElementById('order-comment').value;
+
+            let locationInfo = '';
+            if (orderType === 'delivery') {
+                const address = document.getElementById('order-address').value;
+                locationInfo = `📍 Дарек / Адрес: ${address}`;
+            } else {
+                const branch = document.getElementById('order-branch').value;
+                locationInfo = `🏪 Филиал / Филиал: ${branch}`;
+            }
+
+            let itemsListText = '';
+            let subtotal = 0;
+            cart.forEach((item, index) => {
+                const itemName = currentLang === 'kg' ? item.name_kg : item.name_ru;
+                const itemSum = item.price * item.quantity;
+                subtotal += itemSum;
+                itemsListText += `${index + 1}. ${itemName} - ${item.quantity} шт x ${item.price} = ${itemSum} сом\n`;
+            });
+
+            let deliveryFee = subtotal >= 2500 ? 0 : 200;
+            let total = subtotal + deliveryFee;
+
+            const message = `🍣 ЭЛ СУШИ БУЙРУТМАСЫ / ЗАКАЗ ЭЛЬ СУШИ 🍣\n\n` +
+                `🔹 Тип / Түрү: ${orderType === 'delivery' ? 'Жеткирүү / Доставка' : 'Самовывоз / Өзү алып кетүү'}\n` +
+                `👤 Имя / Аты-жөнү: ${name}\n` +
+                `📞 Телефон: ${phone}\n` +
+                `${locationInfo}\n` +
+                `💳 Оплата / Төлөө: ${payment}\n` +
+                (comment ? `💬 Комментарий / Кошумча: ${comment}\n` : '') +
+                `\n📋 Состав заказа / Курамы:\n${itemsListText}\n` +
+                `💰 Товары / Товарлар: ${subtotal} сом\n` +
+                `🚚 Доставка / Жеткирүү: ${deliveryFee === 0 ? 'Бесплатно / Акысыз' : deliveryFee + ' сом'}\n` +
+                `💵 Итого / Жалпы: ${total} сом`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            closeCheckoutModal();
+            cart = [];
+            updateCartUI();
+
+            showNotification(currentLang === 'kg' ? 'WhatsApp ачылууда...' : 'Открывается WhatsApp...');
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function showNotification(message) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-message');
+            msgEl.textContent = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+
+</html>
