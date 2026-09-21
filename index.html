@@ -230,6 +230,18 @@
                 корзинага кошуңуз.</p>
         </div>
 
+        <!-- Издөө (Поиск) талаасы -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" id="search-input" oninput="filterMenu(currentFilter)"
+                    class="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-400 text-sm font-medium pl-11 pr-4 py-3.5 rounded-2xl focus:outline-none focus:border-brand-500 shadow-lg transition"
+                    data-i18n-placeholder="search_placeholder" placeholder="Товарларды издөө...">
+            </div>
+        </div>
+
         <!-- Мобилдик версия үчүн SELECT -->
         <div class="mb-8 md:hidden">
             <label for="category-select" class="block text-xs font-bold text-slate-400 uppercase mb-2"
@@ -539,6 +551,7 @@
                 hit_pieces: "40 кесим",
                 products_heading: "Товарлар",
                 products_sub: "Ар бир категориядан өзүңүзгө жаккан тамакты тандап, корзинага кошуңуз.",
+                search_placeholder: "Товарларды издөө...",
                 select_cat_label: "Категорияны тандоо",
                 cat_all: "🍽️ Бардык товарлар",
                 cat_sets: "🍣 Сеттер",
@@ -612,6 +625,7 @@
                 hit_pieces: "40 кусочков",
                 products_heading: "Товары",
                 products_sub: "Выберите понравившееся блюдо из каждой категории и добавьте в корзину.",
+                search_placeholder: "Поиск товаров...",
                 select_cat_label: "Выбрать категорию",
                 cat_all: "🍽️ Все товары",
                 cat_sets: "🍣 Сеты",
@@ -665,9 +679,9 @@
             { id: 501, name_kg: "Cет 1500 №1", name_ru: "Cет 1500 №1", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо1.jpeg" },
             { id: 502, name_kg: "Комбо 1500 №2", name_ru: "Комбо 1500 №2", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо2.jpeg" },
             { id: 503, name_kg: "Комбо №3 (Хит Фастфуд)", name_ru: "Комбо №3 (Хит Фастфуд)", category: "комбо", price: 1200, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо3.jpeg" },
-            { id: 503, name_kg: "Комбо 999 ", name_ru: "Комбо 999 ", category: "комбо", price: 999, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо4.jpeg" },
-            { id: 503, name_kg: "Комбо 1300", name_ru: "Комбо 1300 ", category: "комбо", price: 1300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо5.jpeg" },
-            { id: 503, name_kg: "Комбо 2300 ", name_ru: "Комбо 2300 ", category: "комбо", price: 2300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо6.jpeg" },
+            { id: 504, name_kg: "Комбо 999", name_ru: "Комбо 999", category: "комбо", price: 999, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо4.jpeg" },
+            { id: 505, name_kg: "Комбо 1300", name_ru: "Комбо 1300", category: "комбо", price: 1300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо5.jpeg" },
+            { id: 506, name_kg: "Комбо 2300", name_ru: "Комбо 2300", category: "комбо", price: 2300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо6.jpeg" },
             // Сеттер
             { id: 1, name_kg: "Сет 100", name_ru: "Сет 100", category: "сеттер", price: 2600, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет 100.jpeg" },
             { id: 2, name_kg: "Сет Большой", name_ru: "Сет Большой", category: "сеттер", price: 2800, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет болшой.jpeg" },
@@ -681,7 +695,6 @@
             { id: 10, name_kg: "Сет Фирменный", name_ru: "Сет Фирменный", category: "сеттер", price: 2200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет фирменный.jpeg" },
             { id: 11, name_kg: "Сет Чикен", name_ru: "Сет Чикен", category: "сеттер", price: 1200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет чикен.jpeg" },
             // Роллдор
-
             { id: 12, name_kg: "Бургер с креветкой ролл", name_ru: "Бургер с креветкой роллы", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Бургер с креветкой роллы.jpeg" },
             { id: 13, name_kg: "Жар кол 10ш", name_ru: "Жар кол 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар кол 10ш.jpeg" },
             { id: 14, name_kg: "Жар фил 10ш", name_ru: "Жар фил 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар фил 10ш.jpeg" },
@@ -740,8 +753,8 @@
             { id: 401, name_kg: "Кока-Кола 2л", name_ru: "Кока-Кола 2л", category: "суусундуктар", price: 200, pieces_kg: "2 л", pieces_ru: "2 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSKscY52jG9CoT3Rn8_MXQZKveUJ2h7PXmKxMlyxb66w&s=10" },
             { id: 402, name_kg: "Фанта 1.5л", name_ru: "Фанта 1.5л", category: "суусундуктар", price: 150, pieces_kg: "1.5 л", pieces_ru: "1.5 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmap6gjv07H5Id17tjgXdE9cqUP0l1zBJ99mwGHBeC8w&s=10" },
             { id: 403, name_kg: "Фанта 2л", name_ru: "Фанта 2л", category: "суусундуктар", price: 200, pieces_kg: "2 л", pieces_ru: "2 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu8bWkXXtD7-WypSw8kU7EN5PkB56ZrPrkHfD69KhczA&s=10" },
-            { id: 404, name_kg: "Ава 1л", name_ru: "Ава 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Суусундук.", desc_ru: "Напиток.", image: "data:image/jpeg;base64,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" },
-            { id: 405, name_kg: "Салам Кола 1л", name_ru: "Салам Кола 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABy1BMVEX///8lJSURGkHUrRIQGj5pa3giIiIAAEBucH1JSUkmJiavn3720GxoanellHZjZXRdX24zLipOTk782HfTrBMAEz5ZWVlTU1MZGBahkHJaXGz912wAAD7vyWTnwldYWFgADkFOUGLasg//2WcwMDAVFBK5poYmJUYAED/Ep3PUtWxmaXzjv1CplXPrxl5dX3MdHyU/Pz8XAADSyrucimaViXRRS0TFoRnHqGhGSV21kzMgIEW8ly/p6enYrihWUWDUs2MzOFKOgXUVGkiBdnXDw8ahgCy8mSFEND64nnXqx3F0b3aohTicgFQoLkyHazWTdC/LrXiQeCNfTTdyZ16+n1xlSTpzVjtqWDbVslLcu2ksLTtiVCAwJhskGxPS0MyDd2NxbWeSkIugoJ6lpKLY2dv6zBbWvoDqzoOmkmKCcDn124rLuIqunIuKZzOLcmEsIjdYTTnKvqJdQ0E6MEd+akd2YVqehEOvlGiQeF2PbkGJiI/BoleifTbu48tKO0F/YU5tVlWgoqzyyUnl1bLJr4J0U0NCR2WbkIGad0V6XjXj3dH/5Hf/2E98aS1zZkhcUC5CPzC5nUTp0pwyOV9VOT63rZ1FPSEvHwW/QoDwAAAZIElEQVR4nO2d/1fa2Nb/LX6jFQEr6CBqITrGJGLGuUBCEgFDmkgCJsh3Om2xMxXtM1YttoDFCfteK2LHaXs78/TPfU6C/TL3+azPWp1xLT7x43u1S9aCH/Zr7X322efsc5Kuritd6UpXutKVlnSlK13pSle60pWudKUrXelKV/p/S4un/3jyhxlo4I8n/zhd7LQ5F67TgZmZmQGPQ5P6eea00yZdsADAveJxGKqFSpw+UqV6xS89rFq13pSld7G2lE+0oXrvbKqI//Nf8Bsmq3o3V0+QAAAABJRU5ErkJggg==" }
+            { id: 404, name_kg: "Ава 1л", name_ru: "Ава 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Суусундук.", desc_ru: "Напиток.", image: "data:image/jpeg;base64,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" },
+            { id: 405, name_kg: "Салам Кола 1л", name_ru: "Салам Кола 1л", category: "суусундуктар", price: 100, pieces_kg: "1 л", pieces_ru: "1 л", desc_kg: "Газдалган суусундук.", desc_ru: "Газированный напиток.", image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABy1BMVEX///8lJSURGkHUrRIQGj5pa3giIiIAAEBucH1JSUkmJiavn3720GxoanellHZjZXRdX24zLipOTk782HfTrBMAEz5ZWVlTU1MZGBahkHJaXGz912wAAD7vyWTnwldYWFgADkFOUGLasg//2WcwMDAVFBK5poYmJUYAED/Ep3PUtWxmaXzjv1CplXPrxl5dX3MdHyU/Pz8XAADSyrucimaViXRRS0TFoRnHqGhGSV21kzMgIEW8ly/p6enYrihWUWDUs2MzOGKOgXUVGkiBdnXDw8ahgCy8mSFEND64nnXqx3F0b3aohTicgFQoLkyHazWTdC/LrXiQeCNfTTdyZ16+n1xlSTpzVjtqWDbVslLcu2ksLTtiVCAwJhskGxPS0MyDd2NxbWeSkIugoJ6lpKLY2dv6zBbWvoDqzoOmkmKCcDn124rLuIqunIuKZzOLcmEsIjdYTTnKvqJdQ0E6MEd+akd2YVqehEOvlGiQeF2PbkGJiI/BoleifTbu48tKO0F/YU5tVlWgoqzyyUnl1bLJr4J0U0NCR2WbkIGad0V6XjXj3dH/5Hf/2E98aS1zZkhcUC5CPzC5nUTp0pwyOV9VOT63rZ1FPSEvHwW/QoDwAAAZIElEQVR4nO2d/1fa2Nb/LX6jFQEr6CBqITrGJGLGuUBCEgFDmkgCJsh3Om2xMxXtM1YttoDFCfteK2LHaXs78/TPfU6C/TL3+azPWp1xLT7x43u1S9aCH/Zr7X322efsc5Kuritd6UpXutKVlnSlK13pSle60pWudKUrXelKV/p/S4un/3jyhxlo4I8n/zhd7LQ5F67TgZmZmQGPQ5P6eea00yZdsADAveJxGKqFSpw+UqV6xS89rFq13pSld7G2lE+0oXrvbKqI//Nf8Bsmq3o3V0+QAAAABJRU5ErkJggg==" }
         ];
 
         let cart = [];
@@ -773,6 +786,14 @@
                 }
             });
 
+            // Input placeholder'ди которуу
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
             document.title = translations[lang].page_title;
             renderProducts();
             renderBranches();
@@ -795,17 +816,28 @@
             renderProducts();
         }
 
-        // Товарларды экранга чыгаруу
+        // Товарларды экранга чыгаруу (Поиск логикасы кошулган)
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
 
-            const filtered = currentFilter === 'all' 
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+
+            let filtered = currentFilter === 'all' 
                 ? products 
                 : products.filter(p => p.category === currentFilter);
 
+            // Поиск боюнча чыпкалоо (Кыргызча же орусча аттары боюнча)
+            if (searchQuery !== "") {
+                filtered = filtered.filter(p => {
+                    const nameKg = p.name_kg.toLowerCase();
+                    const nameRu = p.name_ru.toLowerCase();
+                    return nameKg.includes(searchQuery) || nameRu.includes(searchQuery);
+                });
+            }
+
             if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">Бул категорияда товарлар жок</div>`;
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">${currentLang === 'kg' ? 'Товарлар табылган жок' : 'Товары не найдены'}</div>`;
                 return;
             }
 
@@ -932,7 +964,6 @@
             container.innerHTML = '';
             let subtotal = 0;
 
-            cart.tekser = true; // dummy
             cart.forEach(item => {
                 const name = currentLang === 'kg' ? item.name_kg : item.name_ru;
                 subtotal += item.price * item.quantity;
@@ -953,14 +984,13 @@
                 container.appendChild(row);
             });
 
-            // ОШОНУ ОНДОП БААРДЫК КОДУ ЖАЗЫП БЕРДИК:
             // Буйрутма ыкмасын текшерүү (Жеткирүү же Самовывоз)
             const orderTypeInput = document.querySelector('input[name="order-type"]:checked');
             const isPickup = orderTypeInput && orderTypeInput.value === 'pickup';
 
             let deliveryFee = 0;
             if (isPickup) {
-                deliveryFee = 0; // Самовывоз болсо жеткирүү 0 сом
+                deliveryFee = 0; 
                 deliveryEl.innerText = translations[currentLang].pickup_delivery_text;
                 deliveryEl.className = "font-bold text-emerald-400";
             } else {
@@ -1006,7 +1036,6 @@
                 branchGroup.classList.add('hidden');
                 addressInput.required = true;
             }
-            // Самовывоз тандалганда бааны кайра жаңыртуу үчүн функцияны чакырабыз
             updateCartUI();
         }
 
@@ -1047,18 +1076,22 @@
 
             text += `\n------------------\n`;
             text += `💵 Товарлар: ${subtotal} сом\n`;
-            text += `🛵 Жеткирүү: ${deliveryFee} сом\n`;
+            text += `🚚 Жеткирүү: ${deliveryFee} сом\n`;
             text += `💰 *Жалпы сумма: ${total} сом*\n`;
 
-            const encoded = encodeURIComponent(text);
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
-
-            window.open(url, '_blank');
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`, '_blank');
         }
 
-        function scrollToSection(id) {
-            const el = document.getElementById(id);
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
         }
 
         function toggleMobileMenu() {
@@ -1066,17 +1099,12 @@
             menu.classList.toggle('hidden');
         }
 
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const msg = document.getElementById('toast-message');
-            msg.innerText = message;
-
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3000);
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     </script>
 </body>
-
 </html>
