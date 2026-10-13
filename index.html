@@ -81,8 +81,7 @@
                 <a href="#" class="flex items-center gap-2.5 group">
                     <div
                         class="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden shadow-lg group-hover:border-brand-500 transition-all">
-                        <img src="/logo.jpg"
-                            alt="Эл Суши Логотип" class="w-full h-full object-cover">
+                        <img src="/logo.jpg" alt="Эл Суши Логотип" class="w-full h-full object-cover">
                     </div>
                 </a>
 
@@ -315,8 +314,7 @@
                 <div class="flex items-center gap-2.5">
                     <div
                         class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden shadow-md">
-                        <img src="/logo.jpg"
-                            alt="Эл Суши Логотип" class="w-full h-full object-cover">
+                        <img src="/logo.jpg" alt="Эл Суши Логотип" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <p class="text-sm text-slate-400" data-i18n="footer_about">
@@ -406,10 +404,13 @@
                     </div>
 
                     <!-- Кошулган жаңы жеткирүү маалымат бөлүгү -->
-                    <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 space-y-1">
+                    <div
+                        class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 space-y-1">
                         <p class="font-semibold text-amber-400">Если ваше заказ выше тысячи сом Доставка бесплатно:</p>
-                        <p>В Кара-Балта и Панфиловка и Каинды Каптал Арык В Новопавловка Военно антоновка Ала тоо алтын ордо Кожомкул Авторынок на пиццу и суши.</p>
-                        <p class="font-semibold text-amber-400 mt-2">Если ваше заказ выше тысячи сом за доставку 50сом:</p>
+                        <p>В Кара-Балта и Панфиловка и Каинды Каптал Арык В Новопавловка Военно антоновка Ала тоо алтын
+                            ордо Кожомкул Авторынок на пиццу и суши.</p>
+                        <p class="font-semibold text-amber-400 mt-2">Если ваше заказ выше тысячи сом за доставку 50сом:
+                        </p>
                         <p>Новониколаевка Алексеевка Вознесеновка жайылма Орто арык</p>
                     </div>
 
@@ -684,8 +685,8 @@
 
         const products = [
             // Комбо
-            { id: 501, name_kg: "Cет 1500 №1", name_ru: "Cет 1500 №1", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо1.jpeg" },
-            { id: 502, name_kg: "Комбо 1500 №2", name_ru: "Комбо 1500 №2", category: "комбо", price: 1500, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо2.jpeg" },
+            { id: 501, name_kg: "Cет 1500 №1", name_ru: "Cет 1500 №1", category: "комбо", price: 1550, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо1.jpeg" },
+            { id: 502, name_kg: "Комбо 1500 №2", name_ru: "Комбо 1500 №2", category: "комбо", price: 1550, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо2.jpeg" },
             { id: 503, name_kg: "Комбо №3 (Хит Фастфуд)", name_ru: "Комбо №3 (Хит Фастфуд)", category: "комбо", price: 1200, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо3.jpeg" },
             { id: 504, name_kg: "Комбо 999", name_ru: "Комбо 999", category: "комбо", price: 999, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо4.jpeg" },
             { id: 505, name_kg: "Комбо 1300", name_ru: "Комбо 1300", category: "комбо", price: 1300, pieces_kg: "топтом", pieces_ru: "набор", desc_kg: "", desc_ru: "", image: "img комбо/комбо5.jpeg" },
@@ -693,37 +694,37 @@
             // Сеттер
             { id: 1, name_kg: "Сет 100", name_ru: "Сет 100", category: "сеттер", price: 2600, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет 100.jpeg" },
             { id: 2, name_kg: "Сет Большой", name_ru: "Сет Большой", category: "сеттер", price: 2800, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет болшой.jpeg" },
-            { id: 3, name_kg: "Сет Для себя", name_ru: "Сет Для себя", category: "сеттер", price: 1100, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет для себя.jpeg" },
-            { id: 4, name_kg: "Сет Запеченный", name_ru: "Сет Запеченный", category: "сеттер", price: 1500, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет запеченный.jpeg" },
-            { id: 5, name_kg: "Сет Золотая", name_ru: "Сет Золотая", category: "сеттер", price: 1750, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет золотая.jpeg" },
+            { id: 3, name_kg: "Сет Для себя", name_ru: "Сет Для себя", category: "сеттер", price: 1150, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет для себя.jpeg" },
+            { id: 4, name_kg: "Сет Запеченный", name_ru: "Сет Запеченный", category: "сеттер", price: 1550, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет запеченный.jpeg" },
+            { id: 5, name_kg: "Сет Золотая", name_ru: "Сет Золотая", category: "сеттер", price: 1800, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет золотая.jpeg" },
             { id: 6, name_kg: "Сет Мини", name_ru: "Сет Мини", category: "сеттер", price: 900, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет мини.jpeg" },
-            { id: 7, name_kg: "Сет От шефа", name_ru: "Сет От шефа", category: "сеттер", price: 1200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет от шефа.jpeg" },
-            { id: 8, name_kg: "Сет Семья", name_ru: "Сет Семья", category: "сеттер", price: 1600, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет семья.jpeg" },
-            { id: 9, name_kg: "Сет Суши Бест", name_ru: "Сет Суши Бест", category: "сеттер", price: 1500, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет суши бест .jpeg" },
-            { id: 10, name_kg: "Сет Фирменный", name_ru: "Сет Фирменный", category: "сеттер", price: 2200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет фирменный.jpeg" },
+            { id: 7, name_kg: "Сет От шефа", name_ru: "Сет От шефа", category: "сеттер", price: 1250, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет от шефа.jpeg" },
+            { id: 8, name_kg: "Сет Семья", name_ru: "Сет Семья", category: "сеттер", price: 1650, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет семья.jpeg" },
+            { id: 9, name_kg: "Сет Суши Бест", name_ru: "Сет Суши Бест", category: "сеттер", price: 1550, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет суши бест .jpeg" },
+            { id: 10, name_kg: "Сет Фирменный", name_ru: "Сет Фирменный", category: "сеттер", price: 2250, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет фирменный.jpeg" },
             { id: 11, name_kg: "Сет Чикен", name_ru: "Сет Чикен", category: "сеттер", price: 1200, pieces_kg: "сет", pieces_ru: "сет", desc_kg: "Толук маалымат же курамы...", desc_ru: "Подробная информация или состав...", image: "img сеты/сет чикен.jpeg" },
             // Роллдор
-            { id: 12, name_kg: "Бургер с креветкой ролл", name_ru: "Бургер с креветкой роллы", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Бургер с креветкой роллы.jpeg" },
-            { id: 13, name_kg: "Жар кол 10ш", name_ru: "Жар кол 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар кол 10ш.jpeg" },
-            { id: 14, name_kg: "Жар фил 10ш", name_ru: "Жар фил 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар фил 10ш.jpeg" },
-            { id: 15, name_kg: "Жар цез 10ш", name_ru: "Жар цез 10шт", category: "роллдор", price: 400, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар цез 10ш.jpeg" },
-            { id: 16, name_kg: "Жаренный ролл с креветкой", name_ru: "Жаренный ролл с креветкой", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Жаренный ролл с креветкой.jpeg" },
-            { id: 17, name_kg: "Запеч ролл с крабовыми", name_ru: "Запеч ролл с крабовыми", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с крабовыми палочками.jpeg" },
-            { id: 18, name_kg: "Запеч ролл с курицей", name_ru: "Запеч ролл с курицей", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с курицей.jpeg" },
-            { id: 19, name_kg: "Запеченный ролл с курицей", name_ru: "Запеченный ролл с курицей", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с курицей острый.jpeg" },
-            { id: 20, name_kg: "Запеченный ролл с лососем", name_ru: "Запеченный ролл с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с лососем.jpeg" },
-            { id: 21, name_kg: "Ролл с икрой", name_ru: "Калифорния с икрой", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с икрой.jpeg" },
-            { id: 22, name_kg: "Ролл с лососем", name_ru: "Калифорния с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с лас.jpeg" },
+            { id: 12, name_kg: "Бургер с креветкой ролл", name_ru: "Бургер с креветкой роллы", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Бургер с креветкой роллы.jpeg" },
+            { id: 13, name_kg: "Жар кол 10ш", name_ru: "Жар кол 10шт", category: "роллдор", price: 420, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар кол 10ш.jpeg" },
+            { id: 14, name_kg: "Жар фил 10ш", name_ru: "Жар фил 10шт", category: "роллдор", price: 420, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар фил 10ш.jpeg" },
+            { id: 15, name_kg: "Жар цез 10ш", name_ru: "Жар цез 10шт", category: "роллдор", price: 420, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/жар цез 10ш.jpeg" },
+            { id: 16, name_kg: "Жаренный ролл с креветкой", name_ru: "Жаренный ролл с креветкой", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Жаренный ролл с креветкой.jpeg" },
+            { id: 17, name_kg: "Запеч ролл с крабовыми", name_ru: "Запеч ролл с крабовыми", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с крабовыми палочками.jpeg" },
+            { id: 18, name_kg: "Запеч ролл с курицей", name_ru: "Запеч ролл с курицей", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеч ролл с курицей.jpeg" },
+            { id: 19, name_kg: "Запеченный ролл с курицей", name_ru: "Запеченный ролл с курицей", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с курицей острый.jpeg" },
+            { id: 20, name_kg: "Запеченный ролл с лососем", name_ru: "Запеченный ролл с лососем", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/Запеченный ролл с лососем.jpeg" },
+            { id: 21, name_kg: "Ролл с икрой", name_ru: "Калифорния с икрой", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с икрой.jpeg" },
+            { id: 22, name_kg: "Ролл с лососем", name_ru: "Калифорния с лососем", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/кол с лас.jpeg" },
             { id: 23, name_kg: "Мини с лососем 10ш", name_ru: "Мини с лососем (10 шт.)", category: "роллдор", price: 200, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/мини с лас 10ш.jpeg" },
             { id: 24, name_kg: "Мини с огурцом 10ш", name_ru: "Мини с огурцом (10 шт.)", category: "роллдор", price: 200, pieces_kg: "10 кесим", pieces_ru: "10 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/мини с огур 10ш.jpeg" },
-            { id: 25, name_kg: "Ролл дракон", name_ru: "Ролл Дракон", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол дракон.jpeg" },
-            { id: 26, name_kg: "Ролл сэндвич", name_ru: "Ролл Сэндвич", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол сендвич.jpeg" },
-            { id: 27, name_kg: "Ролл сырный", name_ru: "Ролл сырный", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/рол сырный.jpeg" },
+            { id: 25, name_kg: "Ролл дракон", name_ru: "Ролл Дракон", category: "роллдор", price: 520, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол дракон.jpeg" },
+            { id: 26, name_kg: "Ролл сэндвич", name_ru: "Ролл Сэндвич", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/рол сендвич.jpeg" },
+            { id: 27, name_kg: "Ролл сырный", name_ru: "Ролл сырный", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/рол сырный.jpeg" },
             { id: 28, name_kg: "Ролл бургер с лососем", name_ru: "Ролл бургер с лососем", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/Ролл бургер с лососем.jpeg" },
-            { id: 29, name_kg: "Суши конверт", name_ru: "Суши конверт", category: "роллдор", price: 400, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/суши конверт.jpeg" },
-            { id: 30, name_kg: "Фила бтг", name_ru: "Филадельфия биг", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/фила бтг.jpeg" },
-            { id: 31, name_kg: "Фила классик", name_ru: "Филадельфия классика", category: "роллдор", price: 500, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила классик.jpeg" },
-            { id: 32, name_kg: "Фила лайт", name_ru: "Филадельфия лайт", category: "роллдор", price: 450, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила лайт.jpeg" },
+            { id: 29, name_kg: "Суши конверт", name_ru: "Суши конверт", category: "роллдор", price: 420, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/суши конверт.jpeg" },
+            { id: 30, name_kg: "Фила биг", name_ru: "Филадельфия биг", category: "роллдор", price: 520, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "", desc_ru: "", image: "img суши/фила бтг.jpeg" },
+            { id: 31, name_kg: "Фила классик", name_ru: "Филадельфия классика", category: "роллдор", price: 520, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила классик.jpeg" },
+            { id: 32, name_kg: "Фила лайт", name_ru: "Филадельфия лайт", category: "роллдор", price: 470, pieces_kg: "8 кесим", pieces_ru: "8 кусочков", desc_kg: "Описание товара...", desc_ru: "Описание товара...", image: "img суши/фила лайт.jpeg" },
 
             // Пиццалар
             { id: 101, name_kg: "Пицца 4 сыра (30 см)", name_ru: "Пицца 4 сыра (30 см)", category: "пиццалар", price: 500, pieces_kg: "30 см", pieces_ru: "30 см", desc_kg: "Төрт түрдүү сыр кошулган даамдуу пицца.", desc_ru: "Пицца с четырьмя видами сыра.", image: "img пиццв/4 сыра.jpeg" },
@@ -752,279 +753,279 @@
             { id: 211, name_kg: "Крылышки 15 шт", name_ru: "Крылышки 15 шт", category: "kfc", price: 900, pieces_kg: "15 даана", pieces_ru: "15 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "kfc/крылышки 30ш.jpeg" },
             { id: 212, name_kg: "Крылышки 10 шт", name_ru: "Крылышки 10 шт", category: "kfc", price: 600, pieces_kg: "10 даана", pieces_ru: "10 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "kfc/крылышки 30ш.jpeg" },
             { id: 213, name_kg: "Крылышки 5 шт", name_ru: "Крылышки 5 шт", category: "kfc", price: 300, pieces_kg: "5 даана", pieces_ru: "5 штук", desc_kg: "Кытырак канаттар.", desc_ru: "Хрустящие крылышки.", image: "kfc/крылышки 30ш.jpeg" },
-            { id: 214, name_kg: "Фри большой", name_ru: "Фри большой", category: "kfc", price: 250, pieces_kg: "1 порция", pieces_ru: "1 порция", desc_kg: "Чоң порция картошка фри.", desc_ru: "Большая порция картофеля фри.",  image: "kfc/фри стан.jpeg" },
+            { id: 214, name_kg: "Фри большой", name_ru: "Фри большой", category: "kfc", price: 250, pieces_kg: "1 порция", pieces_ru: "1 порция", desc_kg: "Чоң порция картошка фри.", desc_ru: "Большая порция картофеля фри.", image: "kfc/фри стан.jpeg" },
             // Соустар
             { id: 301, name_kg: "Кетчуп", name_ru: "Кетчуп", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Фирменный кетчуп.", desc_ru: "Фирменный кетчуп.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ07ZkJm4U1QQMUBinKFDrFtYL9tZwEIfKV-EMSA-Leow&s=10" },
             { id: 302, name_kg: "Сырный соус", name_ru: "Сырный соус", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Сыр соусу.", desc_ru: "Сырный соус.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuyONF3sOPSkNafMdyDGgPP6h6tSvGxHT7o8D-TipbkA&s=10" },
             { id: 303, name_kg: "Чесночный соус", name_ru: "Чесночный соус", category: "соустар", price: 30, pieces_kg: "1 даана", pieces_ru: "1 штука", desc_kg: "Сарымсак соусу.", desc_ru: "Чесночный соус.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSav1fdMJxAxmpSQBrmp183sfRPHk__A03kyhyBdxn2nw&s=10" },
             // Суусундуктар
-            { 
-        id: 401, 
-        name_kg: "Кока-Кола 2л", 
-        name_ru: "Кока-Кола 2л", 
-        category: "суусундуктар", 
-        price: 200, 
-        pieces_kg: "2 л", 
-        pieces_ru: "2 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9CpkKxXUgKo7hy4yMqhv8hsoyiNfxtbMcOJ9g4cGSwQ&s=10" 
-    },
-    { 
-        id: 402, 
-        name_kg: "Фанта 1.5л", 
-        name_ru: "Фанта 1.5л", 
-        category: "суусундуктар", 
-        price: 150, 
-        pieces_kg: "1.5 л", 
-        pieces_ru: "1.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgR68w2nRuer-HyVaOnSxEbHvj6RIfoAsaRlitm4VdA&s=10" 
-    },
-    { 
-        id: 403, 
-        name_kg: "Фанта 2л", 
-        name_ru: "Фанта 2л", 
-        category: "суусундуктар", 
-        price: 200, 
-        pieces_kg: "2 л", 
-        pieces_ru: "2 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtAYSF8w2khy0T1MawqPsTM-_vmsEYcvNWFKcrf0zhTw&s=10" 
-    },
-    { 
-        id: 404, 
-        name_kg: "Ава 1л", 
-        name_ru: "Ава 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Суусундук.", 
-        desc_ru: "Напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_67sTTBzUByjA49BZCn1ihqUfThtkI-w3SeqjnC8zNA&s=10" 
-    },
-    { 
-        id: 405, 
-        name_kg: "Салам Кола 1л", 
-        name_ru: "Салам Кола 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrMTpphhdRiihshdc-TnZOvYPnyd9TE_W-OFGIygdmcQ&s=10" 
-    },
-    { 
-        id: 406, 
-        name_kg: "Да-Да 1л", 
-        name_ru: "Да-Да 1л", 
-        category: "суусундуктар", 
-        price: 120, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Шымыраң сок.", 
-        desc_ru: "Сок.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJEFP1IAQtjw-ZJlKaNxdR5qJaRZkrYFA0THlCEpkJpg&s=10" 
-    },
-    { 
-        id: 407, 
-        name_kg: "Пепси 1л", 
-        name_ru: "Пепси 1л", 
-        category: "суусундуктар", 
-        price: 130, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlJjfKTe3AoXdhPRZ6VQxsMoLbVV3NdvugWoXWDnPzQ&s=10" 
-    },
-    { 
-        id: 408, 
-        name_kg: "Пиала 1л", 
-        name_ru: "Пиала 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Муздак чай.", 
-        desc_ru: "Холодный чай.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY47B4elYtbrwuMCJLcfh2SsH5jpzKNYmep9G5wksPzQ&s" 
-    },
-    { 
-        id: 409, 
-        name_kg: "Кока-Кола 1л", 
-        name_ru: "Кока-Кола 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiU6mQggXaGNn_8Fkz4bEFWA2ge-wPl_9mpSvScFrbjQ&s" 
-    },
-    { 
-        id: 410, 
-        name_kg: "Фьюсти 1л", 
-        name_ru: "Фьюсти 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Муздак чай.", 
-        desc_ru: "Холодный чай.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLBuLoVRgCUutQS3GKZCmZgfnmNLBGa5yYdfmElKWNw&s=10" 
-    },
-    { 
-        id: 411, 
-        name_kg: "Пико 1л", 
-        name_ru: "Пико 1л", 
-        category: "суусундуктар", 
-        price: 130, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Сок.", 
-        desc_ru: "Сок.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuajdPY8c1V5FEO2bgAeUSqPs8KaJodkTVsS9X3AcwqA&s=10" 
-    },
-    { 
-        id: 412, 
-        name_kg: "Фанта 1л", 
-        name_ru: "Фанта 1л", 
-        category: "суусундуктар", 
-        price: 100, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOiS_twysTFfH6v_GdEWsciWfrG5BHloNDmSDHcvWZDQ&s=10" 
-    },
-    { 
-        id: 413, 
-        name_kg: "Фанта 0.5л", 
-        name_ru: "Фанта 0.5л", 
-        category: "суусундуктар", 
-        price: 70, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalcSom1qOUcnvyIeeGaZu3svPH5vISzOEv1uuzGKGTQ&s=10" 
-    },
-    { 
-        id: 414, 
-        name_kg: "Пепси 0.5л", 
-        name_ru: "Пепси 0.5л", 
-        category: "суусундуктар", 
-        price: 60, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bElFB0Y5iipFP8APs4cWUd4EQK-HpS0A8w6vmAcHCw&s=10" 
-    },
-    { 
-        id: 415, 
-        name_kg: "Кока-Кола 0.5л", 
-        name_ru: "Кока-Кола 0.5л", 
-        category: "суусундуктар", 
-        price: 70, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzHEQuy9WfaYmI0kheHtBwxTwlAsfnYKwAUP1EG1ESg&s=10" 
-    },
-    { 
-        id: 416, 
-        name_kg: "Асу 0.5л", 
-        name_ru: "Асу 0.5л", 
-        category: "суусундуктар", 
-        price: 65, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Таза суу.", 
-        desc_ru: "Чистая вода.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPyY_bYo-qIczVXjSTEir7xO5lhz3py7MBy1ycV04frw&s=10" 
-    },
-    { 
-        id: 417, 
-        name_kg: "Асу 1л", 
-        name_ru: "Асу 1л", 
-        category: "суусундуктар", 
-        price: 75, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Таза суу.", 
-        desc_ru: "Чистая вода.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2hVjeTTwCV8qsDFT7qUi3iK_eV238MOXiC6yFFUdUA&s=10" 
-    },
-    { 
-        id: 418, 
-        name_kg: "Нектар Солнечный 0.5л", 
-        name_ru: "Нектар Солнечный 0.5л", 
-        category: "суусундуктар", 
-        price: 65, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Шымыраң сок.", 
-        desc_ru: "Сок.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxFpRH-YtZH87h0fGIrWwAVcLdhIGX7oVS-lOLhXnxQ&s=10" 
-    },
-    { 
-        id: 419, 
-        name_kg: "Нектар Солнечный 1л", 
-        name_ru: "Нектар Солнечный 1л", 
-        category: "суусундуктар", 
-        price: 130, 
-        pieces_kg: "1 л", 
-        pieces_ru: "1 л", 
-        desc_kg: "Шымыраң сок.", 
-        desc_ru: "Сок.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxFpRH-YtZH87h0fGIrWwAVcLdhIGX7oVS-lOLhXnxQ&s=10" 
-    },
-    { 
-        id: 420, 
-        name_kg: "Да-Да 0.5л", 
-        name_ru: "Да-Да 0.5л", 
-        category: "суусундуктар", 
-        price: 75, 
-        pieces_kg: "0.5 л", 
-        pieces_ru: "0.5 л", 
-        desc_kg: "Шымыраң сок.", 
-        desc_ru: "Сок.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIuOuA28O1qtgIUJ6_bX1BKJS_1Yf3TN7ToamYP89MQ&s=10" 
-    },
-    { 
-        id: 421, 
-        name_kg: "Кока-Кола 1.5л", 
-        name_ru: "Кока-Кола 1.5л", 
-        category: "суусундуктар", 
-        price: 150, 
-        pieces_kg: "1.5 л", 
-        pieces_ru: "1.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSai-ANnf360Tzlm6lxg3YfkQGfrJOjD6476UkkYEL-2Q&s=10" 
-    },
-    { 
-        id: 421, 
-        name_kg: "Кока-Кола 1.5л", 
-        name_ru: "Кока-Кола 1.5л", 
-        category: "суусундуктар", 
-        price: 150, 
-        pieces_kg: "1.5 л", 
-        pieces_ru: "1.5 л", 
-        desc_kg: "Газдалган суусундук.", 
-        desc_ru: "Газированный напиток.", 
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSai-ANnf360Tzlm6lxg3YfkQGfrJOjD6476UkkYEL-2Q&s=10" 
-    }
+            {
+                id: 401,
+                name_kg: "Кока-Кола 2л",
+                name_ru: "Кока-Кола 2л",
+                category: "суусундуктар",
+                price: 200,
+                pieces_kg: "2 л",
+                pieces_ru: "2 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9CpkKxXUgKo7hy4yMqhv8hsoyiNfxtbMcOJ9g4cGSwQ&s=10"
+            },
+            {
+                id: 402,
+                name_kg: "Фанта 1.5л",
+                name_ru: "Фанта 1.5л",
+                category: "суусундуктар",
+                price: 150,
+                pieces_kg: "1.5 л",
+                pieces_ru: "1.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgR68w2nRuer-HyVaOnSxEbHvj6RIfoAsaRlitm4VdA&s=10"
+            },
+            {
+                id: 403,
+                name_kg: "Фанта 2л",
+                name_ru: "Фанта 2л",
+                category: "суусундуктар",
+                price: 200,
+                pieces_kg: "2 л",
+                pieces_ru: "2 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtAYSF8w2khy0T1MawqPsTM-_vmsEYcvNWFKcrf0zhTw&s=10"
+            },
+            {
+                id: 404,
+                name_kg: "Ава 1л",
+                name_ru: "Ава 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Суусундук.",
+                desc_ru: "Напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_67sTTBzUByjA49BZCn1ihqUfThtkI-w3SeqjnC8zNA&s=10"
+            },
+            {
+                id: 405,
+                name_kg: "Салам Кола 1л",
+                name_ru: "Салам Кола 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrMTpphhdRiihshdc-TnZOvYPnyd9TE_W-OFGIygdmcQ&s=10"
+            },
+            {
+                id: 406,
+                name_kg: "Да-Да 1л",
+                name_ru: "Да-Да 1л",
+                category: "суусундуктар",
+                price: 120,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Шымыраң сок.",
+                desc_ru: "Сок.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJEFP1IAQtjw-ZJlKaNxdR5qJaRZkrYFA0THlCEpkJpg&s=10"
+            },
+            {
+                id: 407,
+                name_kg: "Пепси 1л",
+                name_ru: "Пепси 1л",
+                category: "суусундуктар",
+                price: 130,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlJjfKTe3AoXdhPRZ6VQxsMoLbVV3NdvugWoXWDnPzQ&s=10"
+            },
+            {
+                id: 408,
+                name_kg: "Пиала 1л",
+                name_ru: "Пиала 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Муздак чай.",
+                desc_ru: "Холодный чай.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY47B4elYtbrwuMCJLcfh2SsH5jpzKNYmep9G5wksPzQ&s"
+            },
+            {
+                id: 409,
+                name_kg: "Кока-Кола 1л",
+                name_ru: "Кока-Кола 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiU6mQggXaGNn_8Fkz4bEFWA2ge-wPl_9mpSvScFrbjQ&s"
+            },
+            {
+                id: 410,
+                name_kg: "Фьюсти 1л",
+                name_ru: "Фьюсти 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Муздак чай.",
+                desc_ru: "Холодный чай.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLBuLoVRgCUutQS3GKZCmZgfnmNLBGa5yYdfmElKWNw&s=10"
+            },
+            {
+                id: 411,
+                name_kg: "Пико 1л",
+                name_ru: "Пико 1л",
+                category: "суусундуктар",
+                price: 130,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Сок.",
+                desc_ru: "Сок.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuajdPY8c1V5FEO2bgAeUSqPs8KaJodkTVsS9X3AcwqA&s=10"
+            },
+            {
+                id: 412,
+                name_kg: "Фанта 1л",
+                name_ru: "Фанта 1л",
+                category: "суусундуктар",
+                price: 100,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOiS_twysTFfH6v_GdEWsciWfrG5BHloNDmSDHcvWZDQ&s=10"
+            },
+            {
+                id: 413,
+                name_kg: "Фанта 0.5л",
+                name_ru: "Фанта 0.5л",
+                category: "суусундуктар",
+                price: 70,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalcSom1qOUcnvyIeeGaZu3svPH5vISzOEv1uuzGKGTQ&s=10"
+            },
+            {
+                id: 414,
+                name_kg: "Пепси 0.5л",
+                name_ru: "Пепси 0.5л",
+                category: "суусундуктар",
+                price: 60,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bElFB0Y5iipFP8APs4cWUd4EQK-HpS0A8w6vmAcHCw&s=10"
+            },
+            {
+                id: 415,
+                name_kg: "Кока-Кола 0.5л",
+                name_ru: "Кока-Кола 0.5л",
+                category: "суусундуктар",
+                price: 70,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzHEQuy9WfaYmI0kheHtBwxTwlAsfnYKwAUP1EG1ESg&s=10"
+            },
+            {
+                id: 416,
+                name_kg: "Асу 0.5л",
+                name_ru: "Асу 0.5л",
+                category: "суусундуктар",
+                price: 65,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Таза суу.",
+                desc_ru: "Чистая вода.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPyY_bYo-qIczVXjSTEir7xO5lhz3py7MBy1ycV04frw&s=10"
+            },
+            {
+                id: 417,
+                name_kg: "Асу 1л",
+                name_ru: "Асу 1л",
+                category: "суусундуктар",
+                price: 75,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Таза суу.",
+                desc_ru: "Чистая вода.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2hVjeTTwCV8qsDFT7qUi3iK_eV238MOXiC6yFFUdUA&s=10"
+            },
+            {
+                id: 418,
+                name_kg: "Нектар Солнечный 0.5л",
+                name_ru: "Нектар Солнечный 0.5л",
+                category: "суусундуктар",
+                price: 65,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Шымыраң сок.",
+                desc_ru: "Сок.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxFpRH-YtZH87h0fGIrWwAVcLdhIGX7oVS-lOLhXnxQ&s=10"
+            },
+            {
+                id: 419,
+                name_kg: "Нектар Солнечный 1л",
+                name_ru: "Нектар Солнечный 1л",
+                category: "суусундуктар",
+                price: 130,
+                pieces_kg: "1 л",
+                pieces_ru: "1 л",
+                desc_kg: "Шымыраң сок.",
+                desc_ru: "Сок.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxFpRH-YtZH87h0fGIrWwAVcLdhIGX7oVS-lOLhXnxQ&s=10"
+            },
+            {
+                id: 420,
+                name_kg: "Да-Да 0.5л",
+                name_ru: "Да-Да 0.5л",
+                category: "суусундуктар",
+                price: 75,
+                pieces_kg: "0.5 л",
+                pieces_ru: "0.5 л",
+                desc_kg: "Шымыраң сок.",
+                desc_ru: "Сок.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIuOuA28O1qtgIUJ6_bX1BKJS_1Yf3TN7ToamYP89MQ&s=10"
+            },
+            {
+                id: 421,
+                name_kg: "Кока-Кола 1.5л",
+                name_ru: "Кока-Кола 1.5л",
+                category: "суусундуктар",
+                price: 150,
+                pieces_kg: "1.5 л",
+                pieces_ru: "1.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSai-ANnf360Tzlm6lxg3YfkQGfrJOjD6476UkkYEL-2Q&s=10"
+            },
+            {
+                id: 421,
+                name_kg: "Кока-Кола 1.5л",
+                name_ru: "Кока-Кола 1.5л",
+                category: "суусундуктар",
+                price: 150,
+                pieces_kg: "1.5 л",
+                pieces_ru: "1.5 л",
+                desc_kg: "Газдалган суусундук.",
+                desc_ru: "Газированный напиток.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSai-ANnf360Tzlm6lxg3YfkQGfrJOjD6476UkkYEL-2Q&s=10"
+            }
         ];
         console.log(products);
-        
+
 
         let cart = [];
         let currentFilter = 'all';
@@ -1071,13 +1072,13 @@
         // Фильтр кылуу жана издөө
         function filterMenu(category) {
             currentFilter = category;
-            
+
             // Кнопкалардын активдүү стилин жаңыртуу (Desktop)
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.classList.remove('bg-brand-600', 'text-white', 'shadow-lg', 'shadow-brand-600/30');
                 btn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700', 'border', 'border-slate-700');
             });
-            
+
             // Мобилдик select маанисин синхрондоштуруу
             document.getElementById('category-select').value = category;
 
@@ -1344,7 +1345,7 @@
             text += `👤 *Аты-жөнү:* ${name}\n`;
             text += `📞 *Телефон:* ${phone}\n`;
             text += `📌 *Ыкмасы:* ${orderType === 'delivery' ? 'Жеткирүү 🚗' : 'Өзү алып кетүү 🏃‍♂️'}\n`;
-            
+
             if (orderType === 'delivery') {
                 text += `🏠 *Дареги:* ${address}\n`;
             } else {
@@ -1388,4 +1389,5 @@
         }
     </script>
 </body>
+
 </html>
